@@ -1,0 +1,92 @@
+#bgslider {
+    overflow: hidden;
+    opacity: 0.8;
+}
+
+#bgslider .home-intro {
+    background-color: rgba(222, 222, 222, 0.815);
+    border-radius: 15px;
+    box-shadow: 3px 4px 20px 6px rgb(0, 0, 0);
+    padding: 2rem;
+    z-index: 100;
+    position: absolute;
+    width: 50%;
+    transform: translate(42%, 10%);
+    top: 200px;
+    font-size: 140%;
+    text-align: center;
+    opacity: 1.5;
+    color: #000000;
+}
+
+#bgslider .home-intro button {
+    font-size: 90%;
+    border-radius: 4px;
+    width: 10rem;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: var(--btn-background-color);
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);
+}
+
+#bgslider .home-intro button:hover {
+    font-size: 90%;
+    transition: 0.2s;
+    background-color: var(--btn-color);
+    border: 2px solid var(--btn-background-color);
+    color: var(--btn-background-color);
+    box-shadow: 2px 2px 10px 2px rgb(75, 75, 75);
+}
+
+#bgslider .home-intro button:active {
+    background-color: var(--btn-background-color);
+    border: 2px solid var(--btn-border);
+    color: var(--btn-color);
+}
+
+#bgslider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 30s slidy infinite;
+}
+
+#bgslider figure img {
+    width: 20%;
+    float: left;
+    height: 100vh;
+}
+
+@keyframes slidy {
+    0% {
+        left: 0%;
+    }
+    20% {
+        left: 0%;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}

@@ -1,8 +1,16 @@
 @import url(./components/App/Footer/Footer.css);
 @import url(./components/App/Header/Header.css);
+@import url(./components/App/Home/Home.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
+}
+
+:root {
+    --btn-background-color: #2f3f5c;
+    --btn-color: #e4e4e4;
+    --btn-border: #ffffff;
+    --background-color-1: #ffd199;
 }
 
 body {
