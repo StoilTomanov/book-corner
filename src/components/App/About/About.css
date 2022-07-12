@@ -1,0 +1,93 @@
+.about-page h1 {
+    font-size: 200%;
+    text-align: center;
+}
+
+.about-page i {
+    font-size: 300%;
+}
+
+.about-page .services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about-page .services div {
+    border: none;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 20px;
+    margin: 3rem;
+    width: 15rem;
+    background-color: #9bc8ffc8;
+    box-shadow: 1px 2px 15px 2px rgb(90, 90, 90);
+}
+
+.about-text {
+    text-align: center;
+    width: 50%;
+    position: relative;
+    left: 21%;
+    border-left: 2px solid var(--btn-background-color);
+    border-top: 2px solid var(--btn-background-color);
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 7px 7px 12px -2px rgb(117, 117, 117);
+}
+
+.sign-in-email {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    background-color: var(--background-color-1);
+    border-radius: 100px;
+}
+
+.sign-in-email img.email-icon {
+    width: 13%;
+}
+
+.sign-in-email img.book-icon {
+    width: 13%;
+    position: absolute;
+    left: 87%;
+}
+
+.sign-in-email input {
+    font-size: 140%;
+    position: relative;
+    left: 20rem;
+    width: 30rem;
+    border: 1px solid rgb(29, 23, 148);
+    border-radius: 15px;
+}
+
+.sign-in-email button {
+    font-size: 120%;
+    position: relative;
+    left: 10.6rem;
+    height: 1.9rem;
+    width: 150px;
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: var(--btn-background-color);
+    color: var(--btn-color);
+}
+
+.confirm-terms span {
+    position: absolute;
+    left: 42rem;
+    bottom: 3rem;
+}
+
+.confirm-terms input {
+    position: absolute;
+    left: 26rem;
+    bottom: 3rem;
+}

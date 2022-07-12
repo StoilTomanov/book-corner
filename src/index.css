@@ -3,6 +3,7 @@
 @import url(./components/App/Home/Home.css);
 @import url(./components/App/AuthForms/AuthForms.css);
 @import url(./components/App/Catalog/Catalog.css);
+@import url(./components/App/About/About.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);

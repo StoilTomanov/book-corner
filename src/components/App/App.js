@@ -1,3 +1,4 @@
+import { About } from './About/About';
 import './App.css';
 import { AuthForms } from './AuthForms/AuthForms';
 import { Catalog } from './Catalog/Catalog';
@@ -12,6 +13,7 @@ function App() {
       <Home />
       <AuthForms />
       <Catalog />
+      <About />
       <Footer />
     </div>
   );
