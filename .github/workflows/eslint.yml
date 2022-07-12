@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      security-events: write
+      security-events: write-all
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
