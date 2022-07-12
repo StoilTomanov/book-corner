@@ -9,7 +9,7 @@ export const Home = () => {
             <img src="./assets//backgrounds/upwk61805267-wikimedia-image.jpg" alt="Slider" />
         </figure>
         <div className="home-intro">
-            <p>Book Corner is the right place you need to be. This is your spot. The place where you are surrounded by thousands of books. With the size of over 1100 m2 you can easyly get lost in the remarcable world of the book. Since you are here, why
+            <p>Book Corner is the right place you need to be. This is your spot. The place where you are surrounded by thousands of books. With the size of over 1100 m2 you can easily get lost in the remarkable world of the book. Since you are here, why
                 not have a look at our catalog.</p>
             <button>Catalog</button>
         </div>

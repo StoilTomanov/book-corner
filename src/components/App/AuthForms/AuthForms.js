@@ -10,7 +10,7 @@ export const AuthForms = () => {
                 </button>
             </div>
             <div className="line-divider"></div>
-            <div className="forms-c ontainer">
+            <div className="forms-container">
             <div className="login-element">
                     <form className="login-form">
                         <label htmlFor="username">Username</label>
