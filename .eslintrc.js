@@ -12,7 +12,7 @@ export default {
             "jsx": true
         },
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "exports"
     },
     "plugins": [
         "react"
