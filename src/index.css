@@ -1,12 +1,13 @@
 @import url(./components/App/Footer/Footer.css);
 @import url(./components/App/Header/Header.css);
 @import url(./components/App/Home/Home.css);
-@import url(./components/App/AuthForms/AuthForms.css);
 @import url(./components/App/Catalog/Catalog.css);
 @import url(./components/App/About/About.css);
 @import url(./components/App/CreateBook/CreateBook.css);
 @import url(./components/App/EditBook/EditBook.css);
 @import url(./components/App/Profile/Profile.css);
+@import url(./components/App/Login/Login.css);
+@import url(./components/App/Register/Register.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
@@ -97,4 +98,12 @@ button {
 
 .form-header h1 {
     font-size: 200%;
+}
+
+.right-icon {
+    width: 5.5%;
+    position: absolute;
+    left: 93.7%;
+    border: 0.4rem solid #3f4141;
+    border-radius: 3rem;
 }

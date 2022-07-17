@@ -1,13 +1,14 @@
+import { FormsHeader } from '../FormsHeader/FormsHeader';
+
 export const CreateBook = () => {
     return (
         <section className="create-book">
-            <div className="create-book-header">
-                <div className="form-header">
-                    <img className="create-icon" src="./assets/add_edit3.png" alt="Create icon" />
-                    <h1>Create new record</h1>
-                    <img className="book-icon" src="./assets/book-icon.png" alt="Book icon" />
-                </div>
-            </div>
+            <FormsHeader
+                headerTitle="Create new record"
+                imgLeft="./assets/add_edit3.png"
+                imgRight="./assets/book-icon2.png"
+                headerClassName="create-form-header"
+            />
             <div className="form">
                 <form className="create-form">
                     <div className="form-row">
