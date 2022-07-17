@@ -7,6 +7,7 @@ import { Header } from './Header/Header';
 import { Home } from './Home/Home';
 import { EditBook } from './EditBook/EditBook';
 import { CreateBook } from './CreateBook/CreateBook';
+import { Profile } from './Profile/Profile';
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
       <Home />
       <AuthForms />
       <Catalog />
+      <About />
       <CreateBook />
       <EditBook />
-      <About />
+      <Profile />
       <Footer />
     </div>
   );

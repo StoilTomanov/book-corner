@@ -6,7 +6,8 @@
 @import url(./components/App/About/About.css);
 @import url(./components/App/CreateBook/CreateBook.css);
 @import url(./components/App/EditBook/EditBook.css);
-font-face {
+@import url(./components/App/Profile/Profile.css);
+@font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
 }
