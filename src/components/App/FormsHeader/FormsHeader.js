@@ -5,7 +5,7 @@ export const FormsHeader = (props) => {
             <div className="form-header">
                 <img className="create-icon" src={props.imgLeft} alt="Create icon" />
                 <h1>{props.headerTitle}</h1>
-                <img className={props.imageRight == './assets/book-icon.png' ? 'book-icon' : 'right-icon'} src={props.imgRight}/>
+                <img className={props.imageRight === './assets/book-icon.png' ? 'book-icon' : 'right-icon'} src={props.imgRight} alt="Header icons"/>
             </div>
         </div>
     );

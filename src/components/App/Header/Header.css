@@ -8,6 +8,7 @@ header#header {
     justify-content: space-evenly;
     top: 0;
     height: 140px;
+    transition: 0.3s ease;
 }
 
 header#header img.logo-img {

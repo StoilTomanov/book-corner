@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { FormsHeader } from '../FormsHeader/FormsHeader';
 
 export const Register = () => {
@@ -19,7 +21,7 @@ export const Register = () => {
                         <label htmlFor="re-password">Re-Password</label>
                         <input name="re-password" type="password" />
                         <button className="submit-btn" type="submit">Register</button>
-                        <span>Already have an account? <a href="#">Login here</a></span>
+                        <span>Already have an account? <Link to="#">Login here</Link></span>
                     </form>
                 </div>
             </div>

@@ -1,5 +1,7 @@
-import { About } from './About/About';
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
+import { About } from './About/About';
 import { Catalog } from './Catalog/Catalog';
 import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
@@ -10,20 +12,24 @@ import { Profile } from './Profile/Profile';
 import { Login } from './Login/Login';
 import { Register } from './Register/Register';
 
-function App() {
+function App () {
   return (
     <div className="App">
       <Header />
-      <Home />
-      <Catalog />
-      <About />
-      <Login />
-      <Register />
-      <CreateBook />
-      <EditBook />
-      <Profile />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/catalog' element={<Catalog />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/create' element={<CreateBook />} />
+          <Route path='/edit' element={<EditBook />} />
+          <Route path='/profile' element={<Profile />} />
+          {/* TODO: 404 */}
+        </Routes>
       <Footer />
     </div>
+
   );
 }
 

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { FormsHeader } from '../FormsHeader/FormsHeader';
 
 export const Login = () => {
@@ -17,7 +19,7 @@ export const Login = () => {
                         <label htmlFor="password">Password</label>
                         <input name="password" type="password" />
                         <button className="submit-btn" type="submit">Login</button>
-                        <span>You don't have an account? <a href="#">Register here</a></span>
+                        <span>You don't have an account? <Link to="#">Register here</Link></span>
                     </form>
                 </div>
             </div>
