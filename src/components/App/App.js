@@ -6,6 +6,7 @@ import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
 import { Home } from './Home/Home';
 import { EditBook } from './EditBook/EditBook';
+import { CreateBook } from './CreateBook/CreateBook';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Home />
       <AuthForms />
       <Catalog />
+      <CreateBook />
       <EditBook />
       <About />
       <Footer />
