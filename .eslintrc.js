@@ -1,7 +1,8 @@
-export default {
+module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "extends": [
         "eslint:recommended",
@@ -12,7 +13,7 @@ export default {
             "jsx": true
         },
         "ecmaVersion": "latest",
-        "sourceType": "exports"
+        "sourceType": "module"
     },
     "plugins": [
         "react"
