@@ -22,6 +22,7 @@ module.exports = {
         // suppress errors for missing 'import React' in files
         "react/react-in-jsx-scope": "off",
         // eslint-disable-next-line
-        "react/no-unescaped-entities": 0
+        "react/no-unescaped-entities": 0,
+        "react/prop-types": 0
     }
 }

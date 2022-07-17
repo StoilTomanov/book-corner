@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTruck, faMoneyBill1Wave, faBook, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+
 export const About = () => {
     return (
         <section className="about-page">
@@ -11,19 +14,19 @@ export const About = () => {
             <div className="services">
                 {/* TODO: Check font awesome setup for React!!! */}
                 <div className="fast-delivery">
-                    <i className="fa-solid fa-truck-fast"></i>
+                    <FontAwesomeIcon icon={faTruck} className="font-awesome" />
                     <p>Fast delivery</p>
                 </div>
                 <div className="free-delivery">
-                    <i className="fa-solid fa-money-bill-1-wave"></i>
+                    <FontAwesomeIcon icon={faMoneyBill1Wave} className="font-awesome" />
                     <p>Free delivery over 50lv</p>
                 </div>
                 <div className="brands">
-                    <i className="fa-solid fa-book"></i>
+                    <FontAwesomeIcon icon={faBook} className="font-awesome" />
                     <p>Over 300 brands</p>
                 </div>
                 <div className="sale">
-                    <i className="fa-solid fa-circle-check"></i>
+                    <FontAwesomeIcon icon={faCircleCheck} className="font-awesome" />
                     <p>Quality check</p>
                 </div>
             </div>
