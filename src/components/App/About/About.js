@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruck, faMoneyBill1Wave, faBook, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 
-export const About = () => {
+export const About = () =>
+{
     return (
         <section className="about-page">
             <h1>About us</h1>
@@ -30,6 +31,29 @@ export const About = () => {
                     <p>Quality check</p>
                 </div>
             </div>
+            <h2>Reach us!</h2>
+            <div className='contacts'>
+                <div className='map'>
+                    <a href='https://www.google.com/maps/@40.705942,-74.0162614,14.29z' target='_blank' rel='noreferrer'><img src="./assets/maps.png" alt="Location" /></a>
+                </div>
+                <div className="address">
+                    <p>
+                        Headquarter: 5th Avenue, NewYork, NY, USA
+                    </p>
+                    <p>
+                        Storage: 6th Avenue, Boston, MS, USA
+                    </p>
+                    <p>
+                        +1 333 1234567
+                    </p>
+                    <p>
+                        Working time: Every day!
+                    </p>
+                    <p>
+                        Email: book-corner@book.com
+                    </p>
+                </div>
+            </div>
             <div className="sign-in-email">
                 <img className="email-icon" src="./assets/email-icon.png" alt="Email icon" />
                 <input type="email" name="email-news" id="email-news" />
@@ -39,8 +63,6 @@ export const About = () => {
                 </div>
                 <img className="book-icon" src="./assets/book-icon.png" alt="Book icon" />
             </div>
-            {/* TODO: Remove the hr line */}
-            <hr></hr>
         </section>
     );
 }
