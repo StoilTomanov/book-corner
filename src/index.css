@@ -8,6 +8,7 @@
 @import url(./components/App/Profile/Profile.css);
 @import url(./components/App/Login/Login.css);
 @import url(./components/App/Register/Register.css);
+@import url(./components/App/Privacy/Privacy.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
@@ -18,6 +19,7 @@
     --background-color: #2f3f5c;
     --btn-color: #e4e4e4;
     --btn-border: #ffffff;
+    --text-color: #ffffff;
     --background-color-1: #ffd199;
 }
 

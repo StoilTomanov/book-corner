@@ -1,0 +1,26 @@
+section.privacy-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 5rem;
+    justify-content: space-evenly;
+    width: 90%;
+    left: 4.5rem;
+    font-size: 110%;
+}
+
+.privacy-section h4 {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 2rem;
+}
+
+div.divider-privacy {
+    height: 0.15rem;
+    border-radius: 2rem;
+    width: 70%;
+    background-color: var(--background-color);
+    position: relative;
+    left: 13rem;
+    margin-bottom: 3rem;
+}

@@ -11,6 +11,7 @@ import { CreateBook } from './CreateBook/CreateBook';
 import { Profile } from './Profile/Profile';
 import { Login } from './Login/Login';
 import { Register } from './Register/Register';
+import { Privacy } from './Privacy/Privacy';
 
 function App () {
   return (
@@ -27,6 +28,7 @@ function App () {
           <Route path='/create' element={<CreateBook />} />
           <Route path='/edit' element={<EditBook />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/privacy' element={<Privacy />} />
           {/* TODO: 404 */}
         </Routes>
       </main>
