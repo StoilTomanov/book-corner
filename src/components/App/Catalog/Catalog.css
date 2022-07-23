@@ -3,6 +3,10 @@
     transition: 0.2s;
 }
 
+section.catalog-page {
+    margin-top: 4rem;
+}
+
 section.catalog-page div.catalog-container .filter-header {
     background-color: var(--background-color-1);
     position: absolute;
@@ -81,7 +85,6 @@ div.book-card-btns button:active {
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    margin: 1rem;
 }
 
 .catalog-container aside {

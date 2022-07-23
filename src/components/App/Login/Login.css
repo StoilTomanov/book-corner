@@ -1,3 +1,7 @@
+div.form-header {
+    margin-top: 3.7rem;
+}
+
 div.forms-container {
     font-size: 150%;
     display: flex;

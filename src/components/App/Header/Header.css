@@ -3,16 +3,40 @@ header#header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: #2f3f5c;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
     position: absolute;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: 100%;
     top: 0;
-    height: 140px;
+    height: 100px;
     transition: 0.3s ease;
 }
 
+header#small-header {
+    z-index: 100;
+    display: flex;
+    background-color: var(--background-color);
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-shadow: 0 0 15px 2px rgb(35, 35, 35);
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+    height: 60px;
+    transition: 0.3s ease;
+}
+
+header img.smaller-logo-img {
+    width: 15%;
+    height: 3rem;
+    position: relative;
+    top: 0.3rem;
+}
+
 header#header img.logo-img {
-    width: 13%;
+    width: 23%;
     position: relative;
     bottom: 30px;
 }
@@ -22,7 +46,7 @@ header#header nav.header-nav {
     flex-direction: row;
     position: relative;
     top: 0;
-    height: 130px;
+    height: 40px;
 }
 
 header#header nav.header-nav ul {
@@ -45,6 +69,39 @@ header#header nav.header-nav ul li a {
 }
 
 header#header nav.header-nav ul li a:hover {
+    color: rgb(0, 234, 255);
+    text-shadow: 2px 2px 20px rgb(255, 255, 255);
+    transition: 0.2s;
+}
+
+
+/* small header properties */
+
+header#small-header nav.header-nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+header#small-header nav.header-nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header#small-header nav.header-nav ul li {
+    margin-right: 3rem;
+    list-style: none;
+    font-size: 150%;
+}
+
+header#small-header nav.header-nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+header#small-header nav.header-nav ul li a:hover {
     color: rgb(0, 234, 255);
     text-shadow: 2px 2px 20px rgb(255, 255, 255);
     transition: 0.2s;

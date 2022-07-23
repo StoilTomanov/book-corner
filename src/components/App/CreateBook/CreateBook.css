@@ -2,6 +2,7 @@ section.create-book {
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-top: 3.7rem;
 }
 
 .create-form {
