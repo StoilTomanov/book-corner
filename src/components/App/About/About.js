@@ -31,7 +31,7 @@ export const About = () =>
                     <p>Quality check</p>
                 </div>
             </div>
-            <h2>Reach us!</h2>
+            <h2>How about visiting us?</h2>
             <div className='contacts'>
                 <div className='map'>
                     <a href='https://www.google.com/maps/@40.705942,-74.0162614,14.29z' target='_blank' rel='noreferrer'><img src="./assets/maps.png" alt="Location" /></a>

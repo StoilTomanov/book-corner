@@ -18,7 +18,10 @@ export const Footer = () => {
                     <Link to="delivery" className="nav-link">Delivery</Link>
                 </li>
                 <li className="nav-footer-element">
-                    <Link to="contacts" className="nav-link">Contacts</Link>
+                    <Link to="contacts" className="nav-link">Careers</Link>
+                </li>
+                <li className="nav-footer-element">
+                    <Link to="contacts" className="nav-link">Contact us</Link>
                 </li>
                 <li className="nav-footer-element">
                     <Link to="faq" className="nav-link">FAQ</Link>
