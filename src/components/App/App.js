@@ -1,10 +1,10 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import './App.css';
 import { About } from './About/About';
 import { Catalog } from './Catalog/Catalog';
-import { Footer } from './Footer/Footer';
 import { Header } from './Header/Header';
+import { Footer } from './Footer/Footer';
 import { Home } from './Home/Home';
 import { EditBook } from './EditBook/EditBook';
 import { CreateBook } from './CreateBook/CreateBook';
@@ -16,8 +16,10 @@ function App () {
   return (
     <div className="App">
       <Header />
+      <main id='main-container'>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Navigate to="/home" replace />}></Route>
+          <Route path='/home' element={<Home />} />
           <Route path='/catalog' element={<Catalog />} />
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
@@ -27,6 +29,7 @@ function App () {
           <Route path='/profile' element={<Profile />} />
           {/* TODO: 404 */}
         </Routes>
+      </main>
       <Footer />
     </div>
 

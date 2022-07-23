@@ -1,7 +1,10 @@
 section.profile-page {
     display: flex;
-    /* TODO: consider removing the margin-top */
-    margin-top: 15rem;
+    margin-top: 3.7rem;
+}
+
+div.form-header {
+    margin-top: 3.7rem;
 }
 
 .profile-container {
@@ -78,11 +81,10 @@ div.vertical-divider {
 
 .profile-content {
     position: relative;
-    /* TODO: consider adjusting the top property */
-    top: 7rem;
     text-align: center;
     width: 80%;
     font-size: 110%;
     /* Change this as soon you start filling the content */
     height: 500px;
+    min-height: calc(100vh - 140px - 86.4px);
 }

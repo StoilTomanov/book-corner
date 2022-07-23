@@ -15,11 +15,13 @@
 
 :root {
     --btn-background-color: #2f3f5c;
+    --background-color: #2f3f5c;
     --btn-color: #e4e4e4;
     --btn-border: #ffffff;
     --background-color-1: #ffd199;
 }
 
+html,
 body {
     margin: 0;
     padding: 0;
@@ -27,6 +29,10 @@ body {
     font-family: external-font, sans-serif;
     display: flex;
     flex-direction: column;
+}
+
+section {
+    min-height: calc(100vh - 118px);
 }
 
 code {
@@ -38,6 +44,18 @@ button {
     border: 2px solid var(--btn-border);
     color: var(--btn-background-color);
     font-family: external-font, sans-serif;
+}
+
+.a-link {
+    color: rgb(23, 90, 189);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.a-link:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    transition: 0.2s;
 }
 
 .form {

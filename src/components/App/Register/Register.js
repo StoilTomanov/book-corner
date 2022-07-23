@@ -21,7 +21,7 @@ export const Register = () => {
                         <label htmlFor="re-password">Re-Password</label>
                         <input name="re-password" type="password" />
                         <button className="submit-btn" type="submit">Register</button>
-                        <span>Already have an account? <Link to="#">Login here</Link></span>
+                        <span>Already have an account? <Link to="/login" className='a-link'>Login here</Link></span>
                     </form>
                 </div>
             </div>

@@ -19,7 +19,7 @@ export const Login = () => {
                         <label htmlFor="password">Password</label>
                         <input name="password" type="password" />
                         <button className="submit-btn" type="submit">Login</button>
-                        <span>You don't have an account? <Link to="#">Register here</Link></span>
+                        <span>You don't have an account? <Link to="/register" className='a-link'>Register here</Link></span>
                     </form>
                 </div>
             </div>

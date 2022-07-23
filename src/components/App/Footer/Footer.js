@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export const Footer = () => {
+    const pathname = useLocation().pathname;
+
     return (
-        <footer id="footer">
+        <footer id={pathname === '/home' ? "hidden-footer" : "footer"}>
         <nav className="footer-nav">
             <ul>
                 <li className="nav-footer-element">
