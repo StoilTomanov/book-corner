@@ -4,6 +4,7 @@ export const Contact = () =>{
             <p>
                 Have a question? Hold off for a moment. Before you use the form below why don't you first check the FAQ section? You might be able to find what you are looking in there. However, feel free to use the contact form to address your question at any time.
             </p>
+            <div className="contact-divider"></div>
             <div className="contact-form">
                 <form>
                     <input type="text" name="email" id="email" placeholder="john.doe@abv.com" />
