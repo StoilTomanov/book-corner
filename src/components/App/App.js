@@ -13,6 +13,7 @@ import { Login } from './Login/Login';
 import { Register } from './Register/Register';
 import { Privacy } from './Privacy/Privacy';
 import { Contact } from './Contact/Contact';
+import { Careers } from './Careers/Careers';
 
 function App () {
   return (
@@ -31,6 +32,7 @@ function App () {
           <Route path='/profile' element={<Profile />} />
           <Route path='/privacy' element={<Privacy />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/careers' element={<Careers />} />
           {/* TODO: 404 */}
         </Routes>
       </main>
