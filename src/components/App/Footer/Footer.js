@@ -12,19 +12,19 @@ export const Footer = () => {
                     <Link to="/about" className="nav-link">About us</Link>
                 </li>
                 <li className="nav-footer-element">
-                    <Link to="privacy" className="nav-link">Privacy Policy</Link>
+                    <Link to="/privacy" className="nav-link">Privacy Policy</Link>
                 </li>
                 <li className="nav-footer-element">
-                    <Link to="delivery" className="nav-link">Delivery</Link>
+                    <Link to="/delivery" className="nav-link">Delivery</Link>
                 </li>
                 <li className="nav-footer-element">
-                    <Link to="contacts" className="nav-link">Careers</Link>
+                    <Link to="/careers" className="nav-link">Careers</Link>
                 </li>
                 <li className="nav-footer-element">
-                    <Link to="contacts" className="nav-link">Contact us</Link>
+                    <Link to="/contact" className="nav-link">Contact us</Link>
                 </li>
                 <li className="nav-footer-element">
-                    <Link to="faq" className="nav-link">FAQ</Link>
+                    <Link to="/faq" className="nav-link">FAQ</Link>
                 </li>
             </ul>
         </nav>
