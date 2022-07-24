@@ -12,6 +12,7 @@ import { Profile } from './Profile/Profile';
 import { Login } from './Login/Login';
 import { Register } from './Register/Register';
 import { Privacy } from './Privacy/Privacy';
+import { Contact } from './Contact/Contact';
 
 function App () {
   return (
@@ -29,6 +30,7 @@ function App () {
           <Route path='/edit' element={<EditBook />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/privacy' element={<Privacy />} />
+          <Route path='/contact' element={<Contact />} />
           {/* TODO: 404 */}
         </Routes>
       </main>
