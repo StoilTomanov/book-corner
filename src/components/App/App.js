@@ -15,6 +15,7 @@ import { Privacy } from './Privacy/Privacy';
 import { Contact } from './Contact/Contact';
 import { Careers } from './Careers/Careers';
 import { Delivery } from './Delivery/Delivery';
+import { FAQ } from './FAQ/FAQ';
 
 function App () {
   return (
@@ -35,6 +36,7 @@ function App () {
           <Route path='/contact' element={<Contact />} />
           <Route path='/careers' element={<Careers />} />
           <Route path='/delivery' element={<Delivery />} />
+          <Route path='/faq' element={<FAQ />} />
           {/* TODO: 404 */}
         </Routes>
       </main>
