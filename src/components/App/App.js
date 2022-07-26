@@ -9,6 +9,7 @@ import { Home } from './Home/Home';
 import { EditBook } from './EditBook/EditBook';
 import { CreateBook } from './CreateBook/CreateBook';
 import { Profile } from './Profile/Profile';
+import { Upcoming } from './Upcoming/Upcoming';
 import { Login } from './Login/Login';
 import { Register } from './Register/Register';
 import { Privacy } from './Privacy/Privacy';
@@ -32,6 +33,7 @@ function App () {
           <Route path='/create' element={<CreateBook />} />
           <Route path='/edit' element={<EditBook />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/upcoming' element={<Upcoming />} />
           <Route path='/privacy' element={<Privacy />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/careers' element={<Careers />} />

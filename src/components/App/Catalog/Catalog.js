@@ -10,10 +10,10 @@ export const Catalog = () => {
                         <label htmlFor="price">Price: <input type="range" name="price" id="price" /></label>
                         <label htmlFor="year">Year: <input type="number" name="year" id="year" min="1950" max="2022" /></label>
                         <label htmlFor="genre">Genre: <input type="text" name="genre" id="genre" /></label>
-                        <button className="submit-btn" type="submit">Filter</button>
+                        <button className="submit-btn" type="submit">Apply</button>
                     </form>
                 </aside>
-                <ol>
+                <ol className="catalog-list">
                     {/* Iterate through list */}
                     <li className="book-item">
                         <div className="book-card">

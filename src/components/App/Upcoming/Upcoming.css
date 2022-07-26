@@ -1,0 +1,76 @@
+.book-img img {
+    width: 100%;
+    transition: 0.2s;
+}
+
+section.upcoming-page {
+    margin-top: 4rem;
+}
+
+section.upcoming-page div.upcoming-container ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+section.upcoming-page ol li {
+    flex: 0 1 200px;
+    margin: 2rem;
+    text-align: center;
+    border: 1px solid rgb(29, 42, 88);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 1px 2px 15px 2px rgb(120, 120, 120);
+    transition: 0.2s;
+}
+
+section.upcoming-page ol li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 2px var(--background-color-1);
+    transition: 0.2s;
+}
+
+.upcoming-list div.book-card {
+    font-size: 110%;
+}
+
+.upcoming-list div.book-card-btns button {
+    background-color: rgb(228, 228, 228);
+    border: 2px solid #2f3f5c;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 120px;
+    padding: 3px;
+    margin: 7px;
+    font-family: external-font;
+    font-size: 110%;
+    transition: 0.2s;
+}
+
+.upcoming-list div.book-card-btns button:hover {
+    background-color: #2f3f5c;
+    border: 2px solid rgba(228, 228, 228);
+    color: #ffffff;
+    transition: 0.2s;
+    box-shadow: 0px 0px 10px 1px rgb(77, 75, 75);
+}
+
+.upcoming-list div.book-card-btns button:active {
+    background-color: #ffffff;
+    color: #2f3f5c;
+    border: 1px solid rgb(22, 29, 99);
+    font-weight: 900;
+    transition: 0.2s;
+}
+
+.upcoming-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
