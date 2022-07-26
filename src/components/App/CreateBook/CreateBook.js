@@ -21,7 +21,7 @@ export const CreateBook = () => {
                     </div>
                     <div className="form-row">
                         <label htmlFor="year">Year</label>
-                        <input type="text" name="year" id="year" />
+                        <input type="number" name="year" id="year" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="pages">Pages</label>
@@ -29,15 +29,37 @@ export const CreateBook = () => {
                     </div>
                     <div className="form-row">
                         <label htmlFor="price">Price</label>
-                        <input type="text" name="price" id="price" />
+                        <input type="number" name="price" id="price" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="image">Image Url</label>
                         <input type="text" name="image" id="image" />
                     </div>
                     <div className="form-row">
-                        <label htmlFor="descriptions">Description</label>
-                        <input type="text" name="descriptions" id="descriptions" />
+                        <label htmlFor="description">Description</label>
+                        <textarea name="description" id="description" />
+                    </div>
+                    <div className='on-sale'>
+                        <p>On sale?</p>
+                        <label htmlFor="on-sale">
+                            <input type="radio" id='on-sale' name='on-sale' value='Yes' />
+                            <span>Yes</span>
+                        </label>
+                        <label htmlFor="on-sale-1">
+                            <input type="radio" id='on-sale-1' name='on-sale' value='No' defaultChecked/>
+                            <span>No</span>
+                        </label>
+                    </div>
+                    <div className='upcoming'>
+                        <p>Upcoming?</p>
+                        <label htmlFor="upcoming">
+                            <input type="radio" id='upcoming' name='upcoming' value='Yes' />
+                            <span>Yes</span>
+                        </label>
+                        <label htmlFor="upcoming-1">
+                            <input type="radio" id='upcoming-1' name='upcoming' value='No' defaultChecked/>
+                            <span>No</span>
+                        </label>
                     </div>
                     <div className="form-row">
                         <button className="submit-create-btn" type="submit">Create</button>
