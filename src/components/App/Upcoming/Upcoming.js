@@ -16,7 +16,7 @@ export const Upcoming = () => {
                                 <span>Steven King</span>
                             </div>
                             <div className="date-coming">
-                                <span>Coming in: November 2022</span>
+                                <span>November 2022</span>
                             </div>
                             <div className="price">
                                 <span>25.00 lv</span>
@@ -38,7 +38,7 @@ export const Upcoming = () => {
                                 <span>Steven King</span>
                             </div>
                             <div className="date-coming">
-                                <span>Coming in: April 2023</span>
+                                <span>April 2023</span>
                             </div>
                             <div className="price">
                                 <span>25.00 lv</span>
@@ -60,7 +60,7 @@ export const Upcoming = () => {
                                 <span>Steven King</span>
                             </div>
                             <div className="date-coming">
-                                <span>Coming in: May 2023</span>
+                                <span>May 2023</span>
                             </div>
                             <div className="price">
                                 <span>25.00 lv</span>
