@@ -17,6 +17,7 @@ import { Contact } from './Contact/Contact';
 import { Careers } from './Careers/Careers';
 import { Delivery } from './Delivery/Delivery';
 import { FAQ } from './FAQ/FAQ';
+import { OnSale } from './OnSale/OnSale';
 
 function App () {
   return (
@@ -34,6 +35,7 @@ function App () {
           <Route path='/edit' element={<EditBook />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/upcoming' element={<Upcoming />} />
+          <Route path='/sale' element={<OnSale />} />
           <Route path='/privacy' element={<Privacy />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/careers' element={<Careers />} />

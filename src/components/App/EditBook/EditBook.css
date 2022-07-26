@@ -53,6 +53,10 @@ textarea#description {
     left: 5px;
 }
 
+.on-sale p {
+    margin-bottom: 0;
+}
+
 .on-sale input {
     opacity: 0;
     position: absolute;
@@ -118,6 +122,10 @@ textarea#description {
 .upcoming {
     position: relative;
     left: 5px;
+}
+
+.upcoming p {
+    margin-bottom: 0;
 }
 
 .upcoming input {
