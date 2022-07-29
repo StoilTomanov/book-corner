@@ -27,6 +27,9 @@
 @import url(./components/App/CreateBook/CreateForm/CreateForm.css);
 @import url(./components/App/EditBook/EditForm/EditForm.css);
 @import url(./components/App/Login/LoginForm/LoginForm.css);
+@import url(./components/App/Register/RegisterForm/RegisterForm.css);
+@import url(./components/App/OnSale/BookItem/BookItem.css);
+@import url(./components/App/Upcoming/UpcomingBookItem/UpcomingBookItem.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
