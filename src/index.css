@@ -18,6 +18,8 @@
 @import url(./components/App/About/AboutContacts/AboutContacts.css);
 @import url(./components/App/About/AboutSignIn/AboutSignIn.css);
 @import url(./components/App/About/AboutText/AboutText.css);
+@import url(./components/App/Careers/CareerIntro/CareerIntro.css);
+@import url(./components/App/Careers/Position/Position.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
