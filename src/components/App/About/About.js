@@ -1,5 +1,5 @@
 import { faTruck, faMoneyBill1Wave, faBook, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
-import { AboutContacts } from './AboutContracts/AboutContracts';
+import { AboutContacts } from './AboutContacts/AboutContacts';
 import { AboutSignIn } from './AboutSignIn/AboutSignIn';
 import { AboutText } from './AboutText/AboutText';
 import { ServiceCard } from './ServiceCard/ServiceCard';

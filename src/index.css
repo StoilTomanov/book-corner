@@ -15,6 +15,9 @@
 @import url(./components/App/FAQ/FAQ.css);
 @import url(./components/App/Upcoming/Upcoming.css);
 @import url(./components/App/OnSale/OnSale.css);
+@import url(./components/App/About/AboutContacts/AboutContacts.css);
+@import url(./components/App/About/AboutSignIn/AboutSignIn.css);
+@import url(./components/App/About/AboutText/AboutText.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
