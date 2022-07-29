@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
-
 import { FormsHeader } from '../FormsHeader/FormsHeader';
+import { RegisterForm } from './RegisterForm/RegisterForm';
 
 export const Register = () => {
     return (
@@ -11,20 +10,7 @@ export const Register = () => {
                 imgRight="./assets/auth2.png"
                 headerClassName="register-header"
             />
-            <div className="forms-container">
-                <div className="register-element">
-                    <form className="register-form">
-                        <label htmlFor="username">Username</label>
-                        <input name="username" type="text" />
-                        <label htmlFor="password">Password</label>
-                        <input name="password" type="password" />
-                        <label htmlFor="re-password">Re-Password</label>
-                        <input name="re-password" type="password" />
-                        <button className="submit-btn" type="submit">Register</button>
-                        <span>Already have an account? <Link to="/login" className='a-link'>Login here</Link></span>
-                    </form>
-                </div>
-            </div>
+            <RegisterForm />
         </section>
     );
 }

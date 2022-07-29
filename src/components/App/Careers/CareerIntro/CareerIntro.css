@@ -1,0 +1,19 @@
+img.career-img {
+    margin-top: 2rem;
+    width: 80%;
+    border-radius: 2rem;
+    z-index: 0;
+}
+
+div.join-us {
+    border: 1px solid var(--background-color);
+    background-color: var(--background-color-1);
+    width: 40%;
+    border-radius: 2rem;
+    font-size: 120%;
+    padding: 1rem;
+    position: absolute;
+    z-index: 1;
+    left: 4rem;
+    top: 20rem;
+}
