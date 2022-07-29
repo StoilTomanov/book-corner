@@ -23,6 +23,7 @@
 @import url(./components/App/Catalog/Filter/Filter.css);
 @import url(./components/App/Catalog/CatalogList/CatalogList.css);
 @import url(./components/App/Catalog/CatalogList/CatalogItem/CatalogItem.css);
+@import url(./components/App/Contact/ContactForm/ContactForm.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
