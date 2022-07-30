@@ -1,21 +1,21 @@
-export const CatalogItem = () => {
+export const CatalogItem = (props) => {
     return (
         <li className="book-item">
             <div className="book-card">
                 <div className="book-img">
-                    <img src="./assets/green_mile.jpg" alt="book" />
+                    <img src={props.data.imageUrl} alt="book" />
                 </div>
                 <div className="book-title">
-                    <strong>Green Mile</strong>
+                    <strong>{props.data.title}</strong>
                 </div>
                 <div className="book-author">
-                    <span>Steven King</span>
+                    <span>{props.data.author}</span>
                 </div>
                 <div className="book-rating">
-                    <span>Rating: 4/5</span>
+                    <span>Rating: {props.data.ratingScore}</span>
                 </div>
                 <div className="price">
-                    <span>25.00 lv</span>
+                    <span>{props.data.price} lv</span>
                 </div>
                 <div className="book-card-btns">
                     <button>Details</button>
