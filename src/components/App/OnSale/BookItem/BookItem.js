@@ -12,8 +12,8 @@ export const BookItem = (props) => {
                 <div className="book-author">
                     <span>{props.data.author}</span>
                 </div>
-                <div className="date-coming">
-                    <span>November 2022</span>
+                <div className="book-rating">
+                    <span>Rating: {props.data.ratingScore}</span>
                 </div>
                 <div className="price">
                     <span>{props.data.price} lv</span>

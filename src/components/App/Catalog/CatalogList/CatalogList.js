@@ -10,6 +10,7 @@ export const CatalogList = () => {
             setState((state)=> ({ ...state , data }))
         })
     }, []);
+    
     return (
         <ol className="catalog-list">
             {state.data.map((element) => {

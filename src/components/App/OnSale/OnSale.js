@@ -10,6 +10,7 @@ export const OnSale = () => {
             setState((state)=> ({ ...state , data }))
         })
     }, []);
+    
     return (
         <section className="on-sale-page">
             <div className="on-sale-container">
