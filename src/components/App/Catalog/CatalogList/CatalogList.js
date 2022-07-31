@@ -1,5 +1,5 @@
 import { CatalogItem } from "./CatalogItem/CatalogItem";
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { getCatalogRecords } from "../../../../services/api-service";
 
 export const CatalogList = () => {
@@ -19,5 +19,3 @@ export const CatalogList = () => {
         </ol>
     );
 }
-
-
