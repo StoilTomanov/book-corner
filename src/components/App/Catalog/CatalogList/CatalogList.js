@@ -13,7 +13,7 @@ export const CatalogList = () => {
     
     return (
         <ol className="catalog-list">
-            {state.data.map((element) => {
+            {state.data?.map((element) => {
                 return <CatalogItem data={element} key={element._id}/>
             })}
         </ol>
