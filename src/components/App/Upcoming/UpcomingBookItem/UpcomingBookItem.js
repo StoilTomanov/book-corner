@@ -12,7 +12,7 @@ export const UpcomingBookItem = (props) => {
                     <span>{props.data.author}</span>
                 </div>
                 <div className="date-coming">
-                    <span>May 2023</span>
+                    <span>{props.data.upcomingDate}</span>
                 </div>
                 <div className="price">
                     <span>{props.data.price} lv</span>
