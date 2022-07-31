@@ -15,6 +15,8 @@ export const OnSale = () => {
         <section className="on-sale-page">
             <div className="on-sale-container">
                 <ol className="on-sale-list">
+                    {state.data.length === 0 && 
+                    <h1 className="no-records">No book records are found</h1>}
                     {state.data.map((element) => {
                         return <BookItem data={element} key={element._id} />
                     })}
