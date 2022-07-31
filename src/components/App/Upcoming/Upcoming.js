@@ -15,6 +15,8 @@ export const Upcoming = () => {
         <section className="upcoming-page">
             <div className="upcoming-container">
                 <ol className="upcoming-list">
+                    {state.data.length === 0 && 
+                    <h1 className="no-records">No book records are found</h1>}
                     {state.data.map((element) => {
                         return <UpcomingBookItem data={element} key={element._id}/>
                     })}

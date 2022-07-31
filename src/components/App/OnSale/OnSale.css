@@ -29,3 +29,9 @@ section.on-sale-page div.on-sale-container ol {
     flex-wrap: wrap;
     position: relative;
 }
+
+.no-records {
+    font-size: 220%;
+    position: absolute;
+    top: 5rem;
+}

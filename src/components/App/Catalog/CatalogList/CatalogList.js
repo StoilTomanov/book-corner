@@ -13,7 +13,9 @@ export const CatalogList = () => {
     
     return (
         <ol className="catalog-list">
-            {state.data?.map((element) => {
+            {state.data.length === 0 && 
+            <h1 className="no-records">No book records are found</h1>}
+            {state.data.map((element) => {
                 return <CatalogItem data={element} key={element._id}/>
             })}
         </ol>
