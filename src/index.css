@@ -31,6 +31,8 @@
 @import url(./components/App/Register/RegisterForm/RegisterForm.css);
 @import url(./components/App/OnSale/BookItem/BookItem.css);
 @import url(./components/App/Upcoming/UpcomingBookItem/UpcomingBookItem.css);
+@import url(./components/App/Details/Comment/Comment.css);
+@import url(./components/App/Details/DetailsWrapper/DetailsWrapper.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
