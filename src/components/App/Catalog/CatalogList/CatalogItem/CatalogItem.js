@@ -1,4 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 export const CatalogItem = (props) => {
+    const navigate = useNavigate();
+    const onDetailsNavigateHandler = (ev) => {
+        navigate(`/details/${ev.target.dataset.id}`);
+    }
+
     return (
         <li className="book-item">
             <div className="book-card">
@@ -18,7 +25,7 @@ export const CatalogItem = (props) => {
                     <span>{props.data.price} lv</span>
                 </div>
                 <div className="book-card-btns">
-                    <button>Details</button>
+                    <button data-id={props.data._id} onClick={onDetailsNavigateHandler}>Details</button>
                     <button>Buy</button>
                 </div>
             </div>

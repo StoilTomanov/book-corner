@@ -1,0 +1,43 @@
+section.details-page {
+    margin-top: 7rem;
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.details-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+div.details-wrapper aside.aside-details {
+    width: 50%;
+    padding: 3rem;
+}
+
+div.aside-image {
+    width: 50%;
+    padding: 3rem;
+}
+
+div.aside-image img {
+    width: 50%;
+}
+
+span.fa {
+    color: red;
+}
+
+span.fa-star {
+    color: orange;
+    font-size: 120%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+span.fa-star:hover~span {
+    color: rgba(72, 72, 72, 0.584);
+    cursor: pointer;
+    transition: 0.2s;
+}

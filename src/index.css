@@ -2,6 +2,7 @@
 @import url(./components/App/Header/Header.css);
 @import url(./components/App/Home/Home.css);
 @import url(./components/App/Catalog/Catalog.css);
+@import url(./components/App/Details/Details.css);
 @import url(./components/App/About/About.css);
 @import url(./components/App/CreateBook/CreateBook.css);
 @import url(./components/App/EditBook/EditBook.css);
