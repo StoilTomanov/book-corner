@@ -5,10 +5,80 @@ section.details-page {
     flex-direction: column;
 }
 
+div.comment-divider {
+    width: 80%;
+    position: relative;
+    left: 1rem;
+    height: 0;
+    margin: 3rem;
+    border: 1px solid rgb(67, 67, 67);
+}
+
+div#rating-stars {
+    font-size: 130%;
+}
+
+.comment-form form>div {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+input#comment-username {
+    width: 65%;
+    padding: 0.5rem;
+    height: 1rem;
+    font-size: 100%;
+    border-radius: 10px;
+    border: 1px solid rgb(75, 75, 75);
+    box-shadow: 1px 1px 5px 1px rgb(41, 41, 41);
+    margin-bottom: 1rem;
+}
+
+textarea#comment-value {
+    resize: none;
+    padding: 0.5rem;
+    width: 90%;
+    font-size: 100%;
+    height: 10rem;
+    border-radius: 10px;
+    border: 1px solid rgb(75, 75, 75);
+    box-shadow: 1px 1px 5px 1px rgb(41, 41, 41);
+}
+
+button.comment-submit-btn {
+    width: 20%;
+    border: 1.5px solid var(--btn-border);
+    background-color: rgb(19, 64, 110);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 1px 1px rgb(54, 54, 54);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button.comment-submit-btn:hover {
+    border: 1.5px solid var(--btn-border);
+    background-color: rgb(57, 126, 222);
+    color: var(--text-color);
+}
+
+button.comment-submit-btn:active {
+    box-shadow: none;
+    transition: 0.2s;
+}
+
 div.details-wrapper {
+    margin-right: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+div.description {
+    height: 150px;
+    overflow: scroll;
 }
 
 div.details-wrapper aside.aside-details {
@@ -23,6 +93,9 @@ div.aside-image {
 
 div.aside-image img {
     width: 50%;
+    border: 2px solid rgb(17, 90, 142);
+    border-radius: 1rem;
+    box-shadow: 10px 10px 20px 5px rgb(104, 104, 104);
 }
 
 span.fa {

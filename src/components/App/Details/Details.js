@@ -8,20 +8,21 @@ export const Details = () => {
                 <aside className="aside-details">
                     <div className="description">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui mollitia facilis magni consequuntur tempora, obcaecati optio minima veritatis animi nulla tenetur cupiditate veniam beatae quis dolore porro assumenda illo corrupti.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui mollitia facilis magni consequuntur tempora, obcaecati optio minima veritatis animi nulla tenetur cupiditate veniam beatae quis dolore porro assumenda illo corrupti.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui mollitia facilis magni consequuntur tempora, obcaecati optio minima veritatis animi nulla tenetur cupiditate veniam beatae quis dolore porro assumenda illo corrupti.
                     </div>
+                    <div className="comment-divider"></div>
                     <div className="comment-form">
                         <form>
-                            <input type="text" id="comment-username" placeholder="Your name" required />
                             <div>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
+                                <div id="rating-stars">
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                </div>
                             </div>
-                            <input type="text" id="comment-value" placeholder="Comment" required />
+                            <textarea name="comment-value" id="comment-value" required></textarea>
+                            <button className="comment-submit-btn" type="submit">Submit</button>
                         </form>
                     </div>
                 </aside>
