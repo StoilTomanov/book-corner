@@ -40,3 +40,16 @@ export const createBookRecord = (bookData) => {
         .then(data => data)
         .catch(error => console.log(error));
 }
+
+export const updateBookRecord = (bookData, bookId) => {
+    return fetch(apiUrl + bookId, {
+        method: 'PUT',
+        body: JSON.stringify(bookData),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+        .then(response => response.json())
+        .then(data => data)
+        .catch(error => console.log(error));
+}
