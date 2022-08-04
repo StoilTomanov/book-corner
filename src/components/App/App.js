@@ -1,4 +1,4 @@
-// [ ] finish details view 
+// [x] finish details view 
 // [ ] show quantity in the details view
 // [ ] implement edit functionality
 // [ ] implement admin role
@@ -27,7 +27,7 @@
 // [ ] user should be able to reply to admin's messages
 // [ ] admin should be able to reply to user's messages
 // [ ] get a confirmation when Buy is clicked
-// [ ] add comment to the book model - e.g. {username: Josh123, comment: 'Really cool book'}
+// [x] add comment to the book model - e.g. {username: Josh123, comment: 'Really cool book'}
 // [ ] add guards
 // [ ] implement search functionality
 

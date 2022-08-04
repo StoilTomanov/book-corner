@@ -34,3 +34,20 @@ div.comment-card #rating-score {
     top: 3rem;
     right: 4.4rem;
 }
+
+div.reviewer {
+    position: absolute;
+    top: -1rem;
+    left: 3rem;
+    border: 1px solid black;
+    background-color: blanchedalmond;
+    color: black;
+    border-radius: 1rem;
+    width: auto;
+    padding: 0 15px 0 15px;
+}
+
+div.no-comments {
+    font-size: 140%;
+    margin: 2rem 0 4rem 0;
+}
