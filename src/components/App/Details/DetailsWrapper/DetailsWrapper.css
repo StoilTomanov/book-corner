@@ -1,5 +1,11 @@
-div#rating-stars {
+div#rating-stars-user {
+    position: relative;
+    top: -6rem;
     font-size: 130%;
+}
+
+div#rating-stars {
+    font-size: 200%;
 }
 
 .comment-form form>div {
@@ -23,9 +29,11 @@ input#comment-username {
 textarea#comment-value {
     resize: none;
     padding: 0.5rem;
-    width: 90%;
+    width: 100%;
+    position: relative;
+    top: -5rem;
     font-size: 100%;
-    height: 10rem;
+    height: 8rem;
     border-radius: 10px;
     border: 1px solid rgb(75, 75, 75);
     box-shadow: 1px 1px 5px 1px rgb(41, 41, 41);
@@ -40,6 +48,8 @@ button.comment-submit-btn {
     box-shadow: 1px 1px 1px 1px rgb(54, 54, 54);
     cursor: pointer;
     transition: 0.2s;
+    position: relative;
+    top: -4rem;
 }
 
 button.comment-submit-btn:hover {
@@ -99,4 +109,70 @@ span.fa-star:hover~span {
     color: rgba(72, 72, 72, 0.584);
     cursor: pointer;
     transition: 0.2s;
+}
+
+button.control-btn-edit {
+    width: 7rem;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px 1px rgb(54, 54, 54);
+    border-radius: 5px;
+    background-color: rgb(0, 119, 113);
+    color: var(--text-color);
+    transition: 0.2s;
+}
+
+button.control-btn-edit:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 119, 113);
+    border: 1px solid rgb(6, 6, 6);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+button.control-btn-edit:active {
+    box-shadow: none;
+}
+
+button.control-btn-delete {
+    width: 7rem;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px 1px rgb(54, 54, 54);
+    border-radius: 5px;
+    background-color: rgb(220, 15, 15);
+    color: var(--text-color);
+    transition: 0.2s;
+}
+
+button.control-btn-delete:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(220, 15, 15);
+    border: 1px solid rgb(6, 6, 6);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+button.control-btn-delete:active {
+    box-shadow: none;
+}
+
+div.price-tag {
+    font-size: 150%;
+    margin-bottom: -2rem;
+    background-color: var(--background-color-1);
+    width: 9rem;
+    text-align: center;
+    position: relative;
+    border-radius: 2rem;
+    top: -4rem;
+    left: 15rem;
+}
+
+div.details-elements {
+    display: flex;
+    flex-direction: row;
+    font-size: 130%;
+    justify-content: space-around;
+    margin: -2rem 0 2rem 0;
+    position: relative;
+    top: -3rem;
 }

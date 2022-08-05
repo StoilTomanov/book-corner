@@ -9,6 +9,17 @@ div.comment-divider {
     width: 80%;
     position: relative;
     left: 1rem;
+    top: -4rem;
+    height: 0;
+    margin: 3rem;
+    border: 1px solid rgb(67, 67, 67);
+}
+
+div.description-divider {
+    width: 80%;
+    position: relative;
+    left: 1rem;
+    top: -2rem;
     height: 0;
     margin: 3rem;
     border: 1px solid rgb(67, 67, 67);

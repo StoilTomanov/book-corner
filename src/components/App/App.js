@@ -1,6 +1,9 @@
-// [x] finish details view 
-// [ ] show quantity in the details view
+// [x] finish details view
+// [ ] post comment to book record
+// [ ] implement login
+// [ ] implement register
 // [ ] implement edit functionality
+// [ ] show quantity in the details view
 // [ ] implement admin role
 // [ ] implement edit button for book record
 // [ ] implement delete button for book record
@@ -12,8 +15,6 @@
 // [ ] users should be able to leave comments/feedback with the rating
 // [ ] implement the bin view - modal
 // [ ] checkout in bin view
-// [ ] implement login
-// [ ] implement register
 // [ ] implement profile view
 // [ ] complete the tabs in the profile view
 // [ ] upload avatar for the profile view
