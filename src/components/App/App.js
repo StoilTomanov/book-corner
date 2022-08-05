@@ -1,14 +1,15 @@
 // [x] finish details view
 // [ ] post comment to book record
-// [ ] implement login
-// [ ] implement register
+// [x] implement login
+// [x] implement register
 // [ ] implement edit functionality
+// [ ] implement delete functionality
 // [ ] form validation
 // [ ] show quantity in the details view
-// [ ] implement admin role
-// [ ] implement edit button for book record
-// [ ] implement delete button for book record
-// [ ] ensure the edit and delete buttons are visible only for the admin
+// [x] implement admin role
+// [x] implement edit button for book record
+// [x] implement delete button for book record
+// [x] ensure the edit and delete buttons are visible only for the admin
 // [ ] complete the filtering in the catalog page
 // [ ] complete the filtering in the upcoming page
 // [ ] complete the filtering in the on-sale page
@@ -55,35 +56,46 @@ import { FAQ } from './FAQ/FAQ';
 import { OnSale } from './OnSale/OnSale';
 import { Details } from './Details/Details';
 
-function App () {
-  return (
-    <div className="App">
-      <Header />
-      <main id='main-container'>
-        <Routes>
-          <Route path='/' element={<Navigate to="/home" replace />}></Route>
-          <Route path='/home' element={<Home />} />
-          <Route path='/catalog' element={<Catalog />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/create' element={<CreateBook />} />
-          <Route path='/details/:id' element={<Details />} />
-          <Route path='/edit/:id' element={<EditBook />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/upcoming' element={<Upcoming />} />
-          <Route path='/sale' element={<OnSale />} />
-          <Route path='/privacy' element={<Privacy />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/careers' element={<Careers />} />
-          <Route path='/delivery' element={<Delivery />} />
-          <Route path='/faq' element={<FAQ />} />
-          {/* TODO: 404 */}
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+import { AuthContext } from '../../contexts/AuthContext';
 
+import { useState } from 'react';
+
+function App () {
+  const [authData, setAuthData] = useState({});
+
+  const authHandler = (authData) => {
+    setAuthData(authData);
+  }
+
+  return (
+    <AuthContext.Provider value={{authData, authHandler}}>
+      <div className="App">
+        <Header />
+        <main id='main-container'>
+          <Routes>
+            <Route path='/' element={<Navigate to="/home" replace />}></Route>
+            <Route path='/home' element={<Home />} />
+            <Route path='/catalog' element={<Catalog />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/create' element={<CreateBook />} />
+            <Route path='/details/:id' element={<Details />} />
+            <Route path='/edit/:id' element={<EditBook />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/upcoming' element={<Upcoming />} />
+            <Route path='/sale' element={<OnSale />} />
+            <Route path='/privacy' element={<Privacy />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/careers' element={<Careers />} />
+            <Route path='/delivery' element={<Delivery />} />
+            <Route path='/faq' element={<FAQ />} />
+            {/* TODO: 404 */}
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </AuthContext.Provider>
   );
 }
 

@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../../contexts/AuthContext";
+
 export const DetailsWrapper = (props) => {
+    const { authData } = useContext(AuthContext);
+
     return (
         <div className="details-wrapper">
             <div className="aside-image">
@@ -28,24 +33,30 @@ export const DetailsWrapper = (props) => {
                     {props.data.price} $
                 </div>
                 <div className="comment-divider"></div>
+                {authData.accessToken && 
+                <>
+                {authData.isAdmin !== true ? 
                 <div className="comment-form">
-                    <form>
-                        <div>
-                            <div id="rating-stars-user">
-                                <span>Rate this book:</span>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
-                                <span className="fa fa-star"></span>
-                            </div>
+                <form>
+                    <div>
+                        <div id="rating-stars-user">
+                            <span>Rate this book:</span>
+                            <span className="fa fa-star"></span>
+                            <span className="fa fa-star"></span>
+                            <span className="fa fa-star"></span>
+                            <span className="fa fa-star"></span>
+                            <span className="fa fa-star"></span>
                         </div>
-                        <textarea name="comment-value" id="comment-value" required placeholder="Add comment"></textarea>
-                        <button className="comment-submit-btn" type="submit">Submit</button>
-                    </form>
-                </div>
+                    </div>
+                    <textarea name="comment-value" id="comment-value" required placeholder="Add comment"></textarea>
+                    <button className="comment-submit-btn" type="submit">Submit</button>
+                </form>
+                </div> : 
+                <>
                 <button className="control-btn-edit" data-id={props.data._id}>Edit</button>
                 <button className="control-btn-delete" data-id={props.data._id}>Delete</button>
+                </>}
+                </>}
             </aside>
         </div>
     );
