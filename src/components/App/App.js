@@ -3,6 +3,7 @@
 // [ ] implement login
 // [ ] implement register
 // [ ] implement edit functionality
+// [ ] form validation
 // [ ] show quantity in the details view
 // [ ] implement admin role
 // [ ] implement edit button for book record
