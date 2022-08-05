@@ -6,8 +6,8 @@ export const EditBook = () => {
         <section className="edit-book">
             <FormsHeader
                 headerTitle="Edit record"
-                imgLeft="./assets/add_edit1.png"
-                imgRight="./assets/book-icon1.png"
+                imgLeft="../assets/add_edit1.png"
+                imgRight="../assets/book-icon1.png"
                 headerClassName="edit-form-header"
             />
             <EditForm />

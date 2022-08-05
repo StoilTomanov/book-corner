@@ -30,3 +30,15 @@
     font-weight: 900;
     transition: 0.2s;
 }
+
+div.price {
+    font-size: 150%;
+    margin-bottom: -2rem;
+    background-color: rgb(38, 178, 216);
+    width: 9rem;
+    text-align: center;
+    position: relative;
+    border-radius: 2rem;
+    top: -6.8rem;
+    left: 5rem;
+}

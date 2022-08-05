@@ -1,0 +1,31 @@
+section.details-page {
+    margin-top: 7rem;
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.comment-divider {
+    width: 80%;
+    position: relative;
+    left: 1rem;
+    top: -4rem;
+    height: 0;
+    margin: 3rem;
+    border: 1px solid rgb(67, 67, 67);
+}
+
+div.description-divider {
+    width: 80%;
+    position: relative;
+    left: 1rem;
+    top: -2rem;
+    height: 0;
+    margin: 3rem;
+    border: 1px solid rgb(67, 67, 67);
+}
+
+div.comments-wrapper {
+    display: flex;
+    flex-direction: column;
+}
