@@ -3,7 +3,7 @@
 // [x] implement login
 // [x] implement register
 // [x] data persist on browser refresh
-// [ ] add 404 page
+// [x] add 404 page
 // [x] add guards
 // [x] implement edit functionality
 // [x] implement delete functionality
@@ -65,6 +65,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { useSession } from '../../hooks/useSession';
 import { GuestGuard } from '../../guards/GuestGuard';
 import { LoggedGuard } from '../../guards/LoggedGuard';
+import { NotFound } from './NotFound/NotFound';
 
 function App () {
   const [authData, setAuthData] = useSession('auth', {});
@@ -117,7 +118,7 @@ function App () {
             <Route path='/careers' element={<Careers />} />
             <Route path='/delivery' element={<Delivery />} />
             <Route path='/faq' element={<FAQ />} />
-            {/* TODO: 404 */}
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
