@@ -85,6 +85,8 @@ div.details-wrapper aside.aside-details {
 div.aside-image {
     width: 50%;
     padding: 3rem;
+    position: relative;
+    top: -4rem;
 }
 
 div.aside-image img {

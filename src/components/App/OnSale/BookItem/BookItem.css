@@ -18,6 +18,7 @@ section.on-sale-page ol li:hover {
 
 .on-sale-list div.book-card {
     font-size: 110%;
+    width: 15rem;
 }
 
 .on-sale-list div.book-card-btns button {

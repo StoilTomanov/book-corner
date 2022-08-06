@@ -1,6 +1,7 @@
 import { UpcomingBookItem } from "./UpcomingBookItem/UpcomingBookItem";
 import { useEffect, useState } from 'react'
 import { getUpcomingRecords } from "../../../services/api-service";
+import { Filter } from "../Catalog/Filter/Filter";
 
 export const Upcoming = () => {
     const [state, setState] = useState({data: []});
@@ -14,6 +15,7 @@ export const Upcoming = () => {
     return (
         <section className="upcoming-page">
             <div className="upcoming-container">
+                <Filter />
                 <ol className="upcoming-list">
                     {state.data.length === 0 && 
                     <h1 className="no-records">No book records are found</h1>}
