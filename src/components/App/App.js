@@ -1,5 +1,4 @@
 // [x] finish details view
-// [ ] post comment to book record
 // [x] implement login
 // [x] implement register
 // [x] data persist on browser refresh
@@ -19,7 +18,7 @@
 // [ ] complete the filtering in the upcoming page
 // [ ] complete the filtering in the on-sale page
 // [ ] implement rating
-// [ ] non-admin users should be able to leave comments/feedback with the rating
+// [ ] non-admin users should be able to post comments/feedback with the rating
 // [ ] implement the bin view - modal
 // [ ] checkout in bin view
 // [ ] implement profile view
