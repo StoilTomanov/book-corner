@@ -3,8 +3,15 @@ import { useState } from "react";
 export const useSession = (key, defaultSessionValue) => {
     const [session, setSession] = useState(() => {
         const storageData = sessionStorage.getItem(key);
-        console.log(storageData);
-        return storageData ? JSON.parse(storageData) : defaultSessionValue;
+        if(storageData !== null){
+            if(storageData !== undefined || storageData !== 'undefined'){
+                return storageData ? JSON.parse(storageData) : defaultSessionValue;
+            } else {
+                return '{}'
+            }
+        } else {
+            return '{}'
+        }
     });
 
     const setSessionValue = (newSessionValue) => {

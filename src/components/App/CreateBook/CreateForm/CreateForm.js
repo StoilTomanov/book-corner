@@ -1,16 +1,21 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../contexts/AuthContext';
 import { createBookRecord } from '../../../../services/api-service';
+import { formChecker } from '../../../../utils/formChecker';
+import { ErrorMessage } from '../../ErrorMessage/ErrorMessage';
 
 export const CreateForm = () => {
     const navigate = useNavigate();
-
+    const {authData} = useContext(AuthContext);
     const [toggleSale, setToggleSale] = useState();
     const [toggleUpcoming, setToggleUpcoming] = useState();
+    const [errorMsg, setErrorMsg] = useState('');
+
     const [value, setValue] = useState({
         title: '',
         author: '',
-        year: 0,
+        year: 1950,
         pages: 0,
         price: 0,
         imageUrl: '',
@@ -25,7 +30,10 @@ export const CreateForm = () => {
         setValue(state => ({
             ...state,
             [ev.target.name]: ev.target.value,
-        }))
+        }));
+
+        setErrorMsg((errorMsg) => errorMsg = '');
+
     };
 
     const checkRadioButton = (ev) => {
@@ -42,7 +50,7 @@ export const CreateForm = () => {
                 setToggleUpcoming(state => state = false);
             }
         }
-    }
+    };
 
     const submitHandler = (ev) => {
         ev.preventDefault();
@@ -50,13 +58,21 @@ export const CreateForm = () => {
         const data = Object.fromEntries(formData);
         data.sale = data.sale === 'No' ? false : true;
         data.upcoming = data.upcoming === 'No' ? false : true;
-        data.price = Number(data.price);
         data.year = Number(data.year);
         data.pages = Number(data.pages);
         data.discount = Number(data.discount);
-        console.log(data);
-        createBookRecord(data);
-        navigate('/catalog');
+
+        const formCheckResult = formChecker(data);
+
+        if(formCheckResult === null) {
+            createBookRecord(data, authData.accessToken);
+            setTimeout(() => {
+                navigate('/catalog');
+            }, 200);
+        } else if (typeof formCheckResult === 'string'){
+            setErrorMsg((errorMsg) => errorMsg = formCheckResult);
+            throw new Error(errorMsg);
+        }
     };
 
     return (
@@ -72,7 +88,7 @@ export const CreateForm = () => {
                 </div>
                 <div className="form-row">
                     <label htmlFor="year">Year</label>
-                    <input type="number" name="year" id="year" value={value.year} onChange={changeHandler}/>
+                    <input type="number" name="year" id="year" min={1950} max={2022} value={value.year} onChange={changeHandler}/>
                 </div>
                 <div className="form-row">
                     <label htmlFor="pages">Pages</label>
@@ -122,6 +138,7 @@ export const CreateForm = () => {
                     <label htmlFor="upcomingDate">Upcoming Date</label>
                     <input type="date" name="upcomingDate" id="upcomingDate" value={value.upcomingDate} onChange={changeHandler}/>
                 </div>}
+                <ErrorMessage message={errorMsg} />
                 <div className="form-row">
                     <button className="submit-create-btn" type="submit">Create</button>
                 </div>

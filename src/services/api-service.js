@@ -28,12 +28,13 @@ export const getUpcomingRecords = () => {
         .catch(error => console.log(error));
 }
 
-export const createBookRecord = (bookData) => {
+export const createBookRecord = (bookData, accessToken) => {
     return fetch(apiUrl, {
         method: 'POST',
         body: JSON.stringify(bookData),
         headers: {
             'Content-Type': 'application/json',
+            'X-Authorization': accessToken,
         }
     })
         .then(response => response.json())

@@ -7,8 +7,9 @@
 // [ ] add guard for the home page - logged user should not be able to access the home page
 // [ ] implement edit functionality
 // [ ] implement delete functionality
-// [ ] form validation
-// [ ] show buy button in the details page
+// [x] form validation
+// [ ] calculate discount
+// [ ] show buy button in the details page for non-admin users
 // [ ] show quantity in the details view
 // [x] implement admin role
 // [x] implement edit button for book record
@@ -18,7 +19,7 @@
 // [ ] complete the filtering in the upcoming page
 // [ ] complete the filtering in the on-sale page
 // [ ] implement rating
-// [ ] users should be able to leave comments/feedback with the rating
+// [ ] non-admin users should be able to leave comments/feedback with the rating
 // [ ] implement the bin view - modal
 // [ ] checkout in bin view
 // [ ] implement profile view
@@ -81,6 +82,7 @@ function App () {
             <Route path='/catalog' element={<Catalog />} />
             <Route path='/about' element={<About />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/logout' element={<Login />}/>
             <Route path='/register' element={<Register />} />
             <Route path='/create' element={<CreateBook />} />
             <Route path='/details/:id' element={<Details />} />

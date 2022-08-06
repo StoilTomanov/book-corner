@@ -1,37 +1,55 @@
 const userURL = 'http://localhost:4000/users/'
 
 export const login = async(username, password) => {
-    return await fetch(userURL + 'login', {
-        method: 'POST',
-        body: JSON.stringify({
-            username,
-            password,
-        }),
-        headers: {
-            'Content-Type': 'application/json',
+    try {
+        const response = await fetch(userURL + 'login', {
+            method: 'POST',
+            body: JSON.stringify({
+                username,
+                password,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if(!response.ok){
+            const result = await response.json();
+            throw new Error(result.message);
+        } else {
+            return response.json();
         }
-    })
-    .then(res => res.json())
-    .then(data => data)
-    .catch(error => console.log(error));
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
 }
 
 export const register = async(username, password, email, gender) => {
-    return await fetch(userURL + 'register', {
-        method: 'POST',
-        body: JSON.stringify({
-            username,
-            password,
-            email,
-            gender,
-        }),
-        headers: {
-            'Content-Type': 'application/json',
+    try {
+        const response = await fetch(userURL + 'register', {
+            method: 'POST',
+            body: JSON.stringify({
+                username,
+                password,
+                email,
+                gender,
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if(!response.ok){
+            const result = await response.json();
+            throw new Error(result.message);
+        } else {
+            return response.json();
         }
-    })
-    .then(res => res.json())
-    .then(data => data)
-    .catch(error => console.log(error));
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
 }
 
 export const logout = async(accessToken) => {
@@ -44,8 +62,14 @@ export const logout = async(accessToken) => {
             },
         });
         
-        return response;
+        if(!response.ok){
+            const result = await response.json();
+            throw new Error(result.message);
+        } else {
+            return response.json();
+        }
     } catch (error) {
         console.log(error);
+        throw new Error(error.message);
     }
 }
