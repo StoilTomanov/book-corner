@@ -1,5 +1,6 @@
 .catalog-list div.book-card {
     font-size: 110%;
+    width: 15rem;
 }
 
 .catalog-list div.book-card-btns button {
@@ -39,6 +40,14 @@ div.price {
     text-align: center;
     position: relative;
     border-radius: 2rem;
-    top: -6.8rem;
-    left: 5rem;
+    top: -9.8rem;
+    left: 2em;
+}
+
+.book-title-main {
+    font-size: 130%;
+    height: 5rem;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+    overflow: hidden;
 }

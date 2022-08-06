@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { updateBookRecord } from "../../../../services/api-service";
+import { AuthContext } from "../../../../contexts/AuthContext";
+import { getBookData, updateBookRecord } from "../../../../services/api-service";
 import { formChecker } from "../../../../utils/formChecker";
 import { ErrorMessage } from "../../ErrorMessage/ErrorMessage";
 
@@ -8,6 +9,7 @@ export const EditForm = () => {
     const navigate = useNavigate();
     const bookId = useParams().id;
 
+    const { authData } = useContext(AuthContext);
     const [toggleSale, setToggleSale] = useState();
     const [toggleUpcoming, setToggleUpcoming] = useState();
     const [errorMsg, setErrorMsg] = useState('');
@@ -35,6 +37,25 @@ export const EditForm = () => {
         setErrorMsg((errorMsg) => errorMsg = '');
 
     };
+
+    useEffect(()=>{
+        getBookData(bookId)
+        .then(data => {
+            setValue(() => ({
+                title: data.title,
+                author: data.author,
+                year: data.year,
+                pages: data.pages,
+                price: data.price,
+                imageUrl: data.imageUrl,
+                description: data.description,
+                sale: data.sale === true ? 'Yes' : 'No',
+                discount: data.discount,
+                upcoming: data.upcoming === true ? 'Yes' : 'No',
+                upcomingDate: data.upcomingDate,
+            }));
+        })
+    }, [bookId]);
 
     const checkRadioButton = (ev) => {
         if(ev.target.name === 'sale'){
@@ -65,7 +86,8 @@ export const EditForm = () => {
         const formCheckResult = formChecker(data);
 
         if(formCheckResult === null) {
-            updateBookRecord(data, bookId);
+            console.log(data);
+            updateBookRecord(data, bookId, authData.accessToken);
             setTimeout(() => {
                 navigate('/catalog');
             }, 200);

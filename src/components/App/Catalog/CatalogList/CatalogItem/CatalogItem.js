@@ -15,7 +15,7 @@ export const CatalogItem = (props) => {
                 <div className="book-img">
                     <img src={props.data.imageUrl} alt="book" />
                 </div>
-                <div className="book-title">
+                <div className="book-title-main">
                     <strong>{props.data.title}</strong>
                 </div>
                 <div className="book-author">

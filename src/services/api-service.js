@@ -42,15 +42,26 @@ export const createBookRecord = (bookData, accessToken) => {
         .catch(error => console.log(error));
 }
 
-export const updateBookRecord = (bookData, bookId) => {
+export const updateBookRecord = (bookData, bookId, accessToken) => {
     return fetch(apiUrl + bookId, {
         method: 'PUT',
         body: JSON.stringify(bookData),
         headers: {
             'Content-Type': 'application/json',
+            'X-Authorization': accessToken,
         }
     })
         .then(response => response.json())
         .then(data => data)
         .catch(error => console.log(error));
+}
+
+export const deleteBookRecord = (bookId, accessToken) => {
+    return fetch(apiUrl + bookId, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken,
+        }
+    })
 }

@@ -176,3 +176,7 @@ div.details-elements {
     position: relative;
     top: -3rem;
 }
+
+div.book-title {
+    font-size: 160%;
+}

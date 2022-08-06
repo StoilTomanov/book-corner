@@ -5,8 +5,8 @@
 // [x] data persist on browser refresh
 // [ ] add guards
 // [ ] add guard for the home page - logged user should not be able to access the home page
-// [ ] implement edit functionality
-// [ ] implement delete functionality
+// [x ] implement edit functionality
+// [x] implement delete functionality
 // [x] form validation
 // [ ] calculate discount
 // [ ] show buy button in the details page for non-admin users
