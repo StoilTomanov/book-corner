@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../../../contexts/AuthContext";
 
 export const CatalogItem = (props) => {
     const navigate = useNavigate();
+    const { authData } = useContext(AuthContext);
     const onDetailsNavigateHandler = (ev) => {
         navigate(`/details/${ev.target.dataset.id}`);
     }
@@ -22,11 +25,11 @@ export const CatalogItem = (props) => {
                     <span>Rating: {props.data.ratingScore}</span>
                 </div>
                 <div className="price">
-                    <span>{props.data.price} lv</span>
+                    <span>{props.data.price} $</span>
                 </div>
                 <div className="book-card-btns">
                     <button data-id={props.data._id} onClick={onDetailsNavigateHandler}>Details</button>
-                    <button>Buy</button>
+                    {authData.accessToken ? <button>Buy</button> : null}
                 </div>
             </div>
         </li>
