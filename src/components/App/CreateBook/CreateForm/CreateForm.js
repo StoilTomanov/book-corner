@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../contexts/AuthContext';
 import { createBookRecord } from '../../../../services/api-service';
 import { formChecker } from '../../../../utils/formChecker';
 import { ErrorMessage } from '../../ErrorMessage/ErrorMessage';
 
 export const CreateForm = () => {
     const navigate = useNavigate();
-
+    const {authData} = useContext(AuthContext);
     const [toggleSale, setToggleSale] = useState();
     const [toggleUpcoming, setToggleUpcoming] = useState();
     const [errorMsg, setErrorMsg] = useState('');
@@ -49,7 +50,7 @@ export const CreateForm = () => {
                 setToggleUpcoming(state => state = false);
             }
         }
-    }
+    };
 
     const submitHandler = (ev) => {
         ev.preventDefault();
@@ -64,8 +65,10 @@ export const CreateForm = () => {
         const formCheckResult = formChecker(data);
 
         if(formCheckResult === null) {
-            navigate('/catalog');
-            createBookRecord(data);
+            createBookRecord(data, authData.accessToken);
+            setTimeout(() => {
+                navigate('/catalog');
+            }, 200)
         } else if (typeof formCheckResult === 'string'){
             setErrorMsg((errorMsg) => errorMsg = formCheckResult);
             throw new Error(errorMsg);
