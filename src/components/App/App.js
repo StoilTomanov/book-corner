@@ -63,6 +63,8 @@ import { Details } from './Details/Details';
 import { AuthContext } from '../../contexts/AuthContext';
 
 import { useSession } from '../../hooks/useSession';
+import { GuestGuard } from '../../guards/GuestGuard';
+import { LoggedGuard } from '../../guards/LoggedGuard';
 
 function App () {
   const [authData, setAuthData] = useSession('auth', {});
@@ -81,13 +83,33 @@ function App () {
             <Route path='/home' element={<Home />} />
             <Route path='/catalog' element={<Catalog />} />
             <Route path='/about' element={<About />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/logout' element={<Login />}/>
-            <Route path='/register' element={<Register />} />
-            <Route path='/create' element={<CreateBook />} />
+            <Route path='/login' element={(
+              <LoggedGuard>
+                <Login />
+              </LoggedGuard>
+            )} />
+            <Route path='/logout' element={<Navigate to="/catalog" replace />}/>
+            <Route path='/register' element={(
+              <LoggedGuard>
+                <Register />
+              </LoggedGuard>
+            )} />
+            <Route path='/create' element={(
+              <GuestGuard>
+                <CreateBook />
+              </GuestGuard>
+            )} />
             <Route path='/details/:id' element={<Details />} />
-            <Route path='/edit/:id' element={<EditBook />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route path='/edit/:id' element={(
+              <GuestGuard>
+                <EditBook />
+              </GuestGuard>
+            )} />
+            <Route path='/profile' element={(
+              <GuestGuard>
+                <Profile />
+              </GuestGuard>
+            )} />
             <Route path='/upcoming' element={<Upcoming />} />
             <Route path='/sale' element={<OnSale />} />
             <Route path='/privacy' element={<Privacy />} />
