@@ -85,6 +85,8 @@ div.details-wrapper aside.aside-details {
 div.aside-image {
     width: 50%;
     padding: 3rem;
+    position: relative;
+    top: -4rem;
 }
 
 div.aside-image img {
@@ -175,4 +177,8 @@ div.details-elements {
     margin: -2rem 0 2rem 0;
     position: relative;
     top: -3rem;
+}
+
+div.book-title {
+    font-size: 160%;
 }

@@ -1,12 +1,29 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../../contexts/AuthContext";
+import { deleteBookRecord } from "../../../../services/api-service";
+import { useNavigate } from "react-router-dom";
 
 export const DetailsWrapper = (props) => {
     const { authData } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const deleteRecordHandler = (ev) => {
+        const bookId = ev.target.dataset.id;
+        deleteBookRecord(bookId, authData.accessToken)
+            .then(() => {
+                navigate('/catalog');
+            })
+    };
+
+    const editRecordHandler = (ev) => {
+        const bookId = ev.target.dataset.id;
+        navigate(`/edit/${bookId}`);
+    };
 
     return (
         <div className="details-wrapper">
             <div className="aside-image">
+                <div className="book-title">{props.data.title}</div>
                 <img src={props.data.imageUrl} alt="Book" />
                 <div id="rating-stars">
                     <span className="fa fa-star"></span>
@@ -53,8 +70,8 @@ export const DetailsWrapper = (props) => {
                 </form>
                 </div> : 
                 <>
-                <button className="control-btn-edit" data-id={props.data._id}>Edit</button>
-                <button className="control-btn-delete" data-id={props.data._id}>Delete</button>
+                <button className="control-btn-edit" data-id={props.data._id} onClick={editRecordHandler}>Edit</button>
+                <button className="control-btn-delete" data-id={props.data._id} onClick={deleteRecordHandler}>Delete</button>
                 </>}
                 </>}
             </aside>

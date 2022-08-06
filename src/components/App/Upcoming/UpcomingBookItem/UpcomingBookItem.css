@@ -17,6 +17,19 @@ section.upcoming-page ol li:hover {
 
 .upcoming-list div.book-card {
     font-size: 110%;
+    width: 15rem;
+}
+
+div.date-coming {
+    font-size: 150%;
+    margin-bottom: -2rem;
+    background-color: rgb(38, 178, 216);
+    width: 9rem;
+    text-align: center;
+    position: relative;
+    border-radius: 2rem;
+    top: -8.2rem;
+    left: 2em;
 }
 
 .upcoming-list div.book-card-btns button {

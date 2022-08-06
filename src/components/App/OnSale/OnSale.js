@@ -1,6 +1,7 @@
 import { BookItem } from "./BookItem/BookItem";
 import { useEffect, useState } from 'react'
 import { getSaleRecords } from "../../../services/api-service";
+import { Filter } from "../Catalog/Filter/Filter";
 
 export const OnSale = () => {
     const [state, setState] = useState({data: []});
@@ -14,6 +15,7 @@ export const OnSale = () => {
     return (
         <section className="on-sale-page">
             <div className="on-sale-container">
+                <Filter />
                 <ol className="on-sale-list">
                     {state.data.length === 0 && 
                     <h1 className="no-records">No book records are found</h1>}

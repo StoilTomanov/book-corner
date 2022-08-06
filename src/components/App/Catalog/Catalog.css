@@ -8,7 +8,7 @@ section.catalog-page {
     margin-top: 4rem;
 }
 
-section.catalog-page div.catalog-container .filter-header {
+.filter-header {
     background-color: var(--background-color-1);
     position: absolute;
     top: -1.6rem;

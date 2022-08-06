@@ -1,6 +1,6 @@
 export const Filter = () => {
     return (
-        <aside>
+        <aside className="filter-wrapper">
             <h3 className="filter-header">Quick filter</h3>
             <form className="filter-form">
                 <label htmlFor="title">Title: <input type="text" name="title" id="title" /></label>
