@@ -7,7 +7,8 @@
 // [ ] add guard for the home page - logged user should not be able to access the home page
 // [ ] implement edit functionality
 // [ ] implement delete functionality
-// [ ] form validation
+// [x] form validation
+// [ ] calculate discount
 // [ ] show buy button in the details page
 // [ ] show quantity in the details view
 // [x] implement admin role
