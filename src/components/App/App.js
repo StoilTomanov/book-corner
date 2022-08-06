@@ -9,7 +9,7 @@
 // [ ] implement delete functionality
 // [x] form validation
 // [ ] calculate discount
-// [ ] show buy button in the details page
+// [ ] show buy button in the details page for non-admin users
 // [ ] show quantity in the details view
 // [x] implement admin role
 // [x] implement edit button for book record
@@ -19,7 +19,7 @@
 // [ ] complete the filtering in the upcoming page
 // [ ] complete the filtering in the on-sale page
 // [ ] implement rating
-// [ ] users should be able to leave comments/feedback with the rating
+// [ ] non-admin users should be able to leave comments/feedback with the rating
 // [ ] implement the bin view - modal
 // [ ] checkout in bin view
 // [ ] implement profile view
