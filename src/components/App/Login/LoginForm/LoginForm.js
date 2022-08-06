@@ -11,15 +11,24 @@ export const LoginForm = () => {
     const onSubmit = (ev) => {
         ev.preventDefault();
         const { username, password } = Object.fromEntries(new FormData(ev.target));
-        login(username, password)
+        if(username.trim() === '' || password.trim() === '') {
+            throw new Error('Username and password are required');
+            //TODO: update a state that will decide when to show the ErrorMessage component
+        } else {
+            login(username, password)
             .then(data => {
-                authHandler(data);
-                navigate('/catalog');
-                console.log(data);
+                if(data === undefined || data === "undefined"){
+                    throw new Error('Something went wrong');
+                } else {
+                    authHandler(data);
+                    navigate('/catalog');
+                }
             })
             .catch((error) => {
+                //TODO: update a state that will decide when to show the ErrorMessage component
                 console.error(error);
             });
+        }
     }
 
     return (

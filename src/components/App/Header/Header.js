@@ -25,7 +25,7 @@ export const Header = () => {
             } src={
                 pathname === '/home' ? "./assets/logo_transparent.png" : "./assets/smaller-logo-img.png"
             } alt="Book Corner logo" />
-            {pathname !== '/home' && <span className='user-email'>{authData.email}</span>}
+            {pathname !== '/home' && authData !== undefined ? <span className='user-email'>{authData.email}</span> : null}
             <nav className="header-nav">
             
             <ul>
