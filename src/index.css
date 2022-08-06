@@ -21,7 +21,7 @@
 @import url(./components/App/About/AboutText/AboutText.css);
 @import url(./components/App/Careers/CareerIntro/CareerIntro.css);
 @import url(./components/App/Careers/Position/Position.css);
-@import url(./components/App/Catalog/Filter/Filter.css);
+@import url(./components/App/Filter/Filter.css);
 @import url(./components/App/Catalog/CatalogList/CatalogList.css);
 @import url(./components/App/Catalog/CatalogList/CatalogItem/CatalogItem.css);
 @import url(./components/App/Contact/ContactForm/ContactForm.css);
