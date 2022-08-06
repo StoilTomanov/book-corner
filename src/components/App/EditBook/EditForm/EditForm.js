@@ -68,7 +68,7 @@ export const EditForm = () => {
             updateBookRecord(data, bookId);
             setTimeout(() => {
                 navigate('/catalog');
-            }, 200)
+            }, 200);
         } else if (typeof formCheckResult === 'string'){
             setErrorMsg((errorMsg) => errorMsg = formCheckResult);
             throw new Error(errorMsg);

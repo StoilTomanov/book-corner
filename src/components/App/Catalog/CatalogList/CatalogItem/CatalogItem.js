@@ -29,7 +29,7 @@ export const CatalogItem = (props) => {
                 </div>
                 <div className="book-card-btns">
                     <button data-id={props.data._id} onClick={onDetailsNavigateHandler}>Details</button>
-                    {authData.accessToken ? <button>Buy</button> : null}
+                    {authData.isAdmin === false ? <button>Buy</button> : null}
                 </div>
             </div>
         </li>

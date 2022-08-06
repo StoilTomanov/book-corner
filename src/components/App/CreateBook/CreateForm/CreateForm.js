@@ -68,7 +68,7 @@ export const CreateForm = () => {
             createBookRecord(data, authData.accessToken);
             setTimeout(() => {
                 navigate('/catalog');
-            }, 200)
+            }, 200);
         } else if (typeof formCheckResult === 'string'){
             setErrorMsg((errorMsg) => errorMsg = formCheckResult);
             throw new Error(errorMsg);
