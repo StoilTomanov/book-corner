@@ -11,7 +11,7 @@ export const Header = () => {
     const navigate = useNavigate();
 
     const logoutHandler = () => {
-        logout(authData.accessToken )
+        logout(authData.accessToken)
             .then(() => {
                 navigate('/login');
                 authHandler({});
@@ -25,12 +25,14 @@ export const Header = () => {
             } src={
                 pathname === '/home' ? "./assets/logo_transparent.png" : "./assets/smaller-logo-img.png"
             } alt="Book Corner logo" />
+            {pathname !== '/home' && <span className='user-email'>{authData.email}</span>}
             <nav className="header-nav">
             
             <ul>
+            {authData.accessToken ? null : 
             <li className="nav-header-element">
                 <Link to="/" className="nav-link">Home</Link>
-            </li>
+            </li>}
             <li className="nav-header-element">
                 <Link to="/catalog" className="nav-link">Catalog</Link>
             </li>
@@ -42,18 +44,22 @@ export const Header = () => {
             </li>
             {authData.accessToken ? 
             <>
-                <li className="nav-header-element">
-                    <Link to="/create" className="nav-link">Create</Link>
-                </li>
-                <li className="nav-header-element">
-                    <Link to="/edit" className="nav-link">Edit</Link>
-                </li>
+                {authData.isAdmin === true &&
+                <>
+                    <li className="nav-header-element">
+                        <Link to="/create" className="nav-link">Create</Link>
+                    </li>
+                    <li className="nav-header-element">
+                        <Link to="/edit" className="nav-link">Edit</Link>
+                    </li>
+                </>}
                 <li className="nav-header-element">
                     <Link to="/profile" className="nav-link">Profile</Link>
                 </li>
-                    <li className="nav-header-element">
+                {authData.isAdmin === false &&
+                <li className="nav-header-element">
                     <Link to="/bin" className="nav-link">Bin</Link>
-                </li>
+                </li>}
                 <li className="nav-header-element">
                     <Link to="/logout" replace onClick={logoutHandler} className="nav-link">Logout</Link>
                 </li>

@@ -2,9 +2,13 @@
 // [ ] post comment to book record
 // [x] implement login
 // [x] implement register
+// [x] data persist on browser refresh
+// [ ] add guards
+// [ ] add guard for the home page - logged user should not be able to access the home page
 // [ ] implement edit functionality
 // [ ] implement delete functionality
 // [ ] form validation
+// [ ] show buy button in the details page
 // [ ] show quantity in the details view
 // [x] implement admin role
 // [x] implement edit button for book record
@@ -21,9 +25,9 @@
 // [ ] complete the tabs in the profile view
 // [ ] upload avatar for the profile view
 // [ ] edit functionality on the profile data (addresses, personal info, etc.)
-// [ ] guest should see catalog and details without functional activities (edit, delete, rate, etc.)
+// [x] guest should see catalog and details without functional activities (edit, delete, rate, etc.)
 // [ ] create modal with the categories
-// [ ] show/hide links based on role and authentication
+// [x] show/hide links based on role and authentication
 // [ ] complete the contact form
 // [ ] create inbox icon for each user
 // [ ] create inbox icon for admin
@@ -31,7 +35,6 @@
 // [ ] admin should be able to reply to user's messages
 // [ ] get a confirmation when Buy is clicked
 // [x] add comment to the book model - e.g. {username: Josh123, comment: 'Really cool book'}
-// [ ] add guards
 // [ ] implement search functionality
 
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -58,10 +61,10 @@ import { Details } from './Details/Details';
 
 import { AuthContext } from '../../contexts/AuthContext';
 
-import { useState } from 'react';
+import { useSession } from '../../hooks/useSession';
 
 function App () {
-  const [authData, setAuthData] = useState({});
+  const [authData, setAuthData] = useSession('auth', {});
 
   const authHandler = (authData) => {
     setAuthData(authData);

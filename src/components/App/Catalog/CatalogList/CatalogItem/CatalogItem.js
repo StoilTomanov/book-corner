@@ -25,7 +25,7 @@ export const CatalogItem = (props) => {
                     <span>Rating: {props.data.ratingScore}</span>
                 </div>
                 <div className="price">
-                    <span>{props.data.price} lv</span>
+                    <span>{props.data.price} $</span>
                 </div>
                 <div className="book-card-btns">
                     <button data-id={props.data._id} onClick={onDetailsNavigateHandler}>Details</button>

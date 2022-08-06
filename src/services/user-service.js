@@ -35,14 +35,17 @@ export const register = async(username, password, email, gender) => {
 }
 
 export const logout = async(accessToken) => {
-    return await fetch(userURL + 'logout', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-Authorization': accessToken,
-        },
-    })
-        .then(res => res.json())
-        .then(data => data)
-        .catch(error => console.log(error));
+    try {
+        const response = await fetch(userURL + 'logout', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Authorization': accessToken,
+            },
+        });
+        
+        return response;
+    } catch (error) {
+        console.log(error);
+    }
 }

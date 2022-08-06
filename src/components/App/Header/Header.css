@@ -106,3 +106,11 @@ header#small-header nav.header-nav ul li a:hover {
     text-shadow: 2px 2px 20px rgb(255, 255, 255);
     transition: 0.2s;
 }
+
+.user-email {
+    color: var(--text-color);
+    position: absolute;
+    left: 14rem;
+    top: 1.8rem;
+    font-size: 150%;
+}
