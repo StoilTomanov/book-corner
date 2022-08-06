@@ -3,10 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../../../contexts/AuthContext';
 import { register } from '../../../../services/user-service';
+import { ErrorMessage } from '../../ErrorMessage/ErrorMessage';
 
 export const RegisterForm = () => {
     const { authHandler } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [errorMsg, setErrorMsg] = useState('');
+
     const [value, setValue] = useState({
         username: '',
         email: '',
@@ -19,25 +22,38 @@ export const RegisterForm = () => {
         setValue(state => ({
             ...state,
             [ev.target.name]: ev.target.value,
-        }))
+        }));
+
+        setErrorMsg((errorMsg) => errorMsg = '');
+
     };
 
     const onSubmit = (ev) => {
         ev.preventDefault();
         const { username, password, rePassword, email, gender } = Object.fromEntries(new FormData(ev.target));
-        if(password.trimEnd() === rePassword.trim()) {
+        if(username.trim() === '' || password.trim() === '' || email.trim() === '') {
+            setErrorMsg((errorMsg) => errorMsg = 'Username, password and email are required');
+            throw new Error('Username and password are required');
+        } else {
+            if(password.trim() !== rePassword.trim()) {
+                setErrorMsg((errorMsg) => errorMsg = 'Passwords must match');
+                throw new Error('Passwords must match');
+            }
             register(username, password, email, gender)
-                .then(data => {
+            .then(data => {
+                if(data === undefined || data === "undefined"){
+                    throw new Error('Something went wrong');
+                } else {
                     authHandler(data);
                     navigate('/catalog');
-                    console.log(data);
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+                }
+            })
+            .catch((error) => {
+                setErrorMsg((errorMsg) => errorMsg = error.message);
+                console.error(error);
+            });
         }
     }    
-
 
     return (
         <div className="forms-container">
@@ -62,6 +78,7 @@ export const RegisterForm = () => {
                     <input name="password" type="password" value={value.password} onChange={changeHandler} />
                     <label htmlFor="rePassword">Re-Password</label>
                     <input name="rePassword" type="password" value={value.rePassword} onChange={changeHandler} />
+                    <ErrorMessage message={errorMsg} />
                     <button className="submit-btn" type="submit">Register</button>
                     <span>Already have an account? <Link to="/login" className='a-link'>Login here</Link></span>
                 </form>

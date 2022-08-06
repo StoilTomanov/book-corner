@@ -48,6 +48,7 @@ export const register = async(username, password, email, gender) => {
         }
     } catch (error) {
         console.log(error);
+        throw new Error(error.message);
     }
 }
 
@@ -69,5 +70,6 @@ export const logout = async(accessToken) => {
         }
     } catch (error) {
         console.log(error);
+        throw new Error(error.message);
     }
 }

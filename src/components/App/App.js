@@ -81,6 +81,7 @@ function App () {
             <Route path='/catalog' element={<Catalog />} />
             <Route path='/about' element={<About />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/logout' element={<Login />}/>
             <Route path='/register' element={<Register />} />
             <Route path='/create' element={<CreateBook />} />
             <Route path='/details/:id' element={<Details />} />
