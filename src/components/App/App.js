@@ -59,13 +59,13 @@ import { Delivery } from './Delivery/Delivery';
 import { FAQ } from './FAQ/FAQ';
 import { OnSale } from './OnSale/OnSale';
 import { Details } from './Details/Details';
+import { NotFound } from './NotFound/NotFound';
 
 import { AuthContext } from '../../contexts/AuthContext';
 
 import { useSession } from '../../hooks/useSession';
 import { GuestGuard } from '../../guards/GuestGuard';
 import { LoggedGuard } from '../../guards/LoggedGuard';
-import { NotFound } from './NotFound/NotFound';
 
 function App () {
   const [authData, setAuthData] = useSession('auth', {});
