@@ -1,7 +1,7 @@
 import { UpcomingBookItem } from "./UpcomingBookItem/UpcomingBookItem";
 import { useEffect, useState } from 'react'
 import { getUpcomingRecords } from "../../../services/api-service";
-import { Filter } from "../Catalog/Filter/Filter";
+import { Filter } from "../Filter/Filter";
 
 export const Upcoming = () => {
     const [state, setState] = useState({data: []});

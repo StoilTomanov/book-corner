@@ -1,7 +1,7 @@
 import { BookItem } from "./BookItem/BookItem";
 import { useEffect, useState } from 'react'
 import { getSaleRecords } from "../../../services/api-service";
-import { Filter } from "../Catalog/Filter/Filter";
+import { Filter } from "../Filter/Filter";
 
 export const OnSale = () => {
     const [state, setState] = useState({data: []});
