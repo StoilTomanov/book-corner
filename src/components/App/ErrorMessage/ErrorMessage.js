@@ -1,7 +1,7 @@
-export const ErrorMessage = () => {
+export const ErrorMessage = (props) => {
     return(
         <div className="error-wrapper">
-            <p>Default Error Message</p>
+            <p>{props.message}</p>
         </div>
     );
 }

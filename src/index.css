@@ -151,3 +151,9 @@ button {
     border: 0.4rem solid #3f4141;
     border-radius: 3rem;
 }
+
+.error-wrapper p {
+    color: #ff0000;
+    text-shadow: 1px 1px 1px #353535;
+    font-size: 100%;
+}
