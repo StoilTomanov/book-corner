@@ -3,9 +3,9 @@
 // [x] implement login
 // [x] implement register
 // [x] data persist on browser refresh
-// [ ] add guards
-// [ ] add guard for the home page - logged user should not be able to access the home page
-// [x ] implement edit functionality
+// [ ] add 404 page
+// [x] add guards
+// [x] implement edit functionality
 // [x] implement delete functionality
 // [x] form validation
 // [ ] calculate discount
