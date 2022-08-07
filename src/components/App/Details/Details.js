@@ -11,16 +11,16 @@ export const Details = () => {
     useEffect(()=>{
         getBookData(params.id)
         .then(data => {
-            setState((state)=> ({ ...state , data }));
+            setState((state) => ({ ...state , data }));
         })
     }, [params.id]);
 
     return (
         <section className="details-page">
-            <DetailsWrapper data={state.data} setState={setState}/>
+            <DetailsWrapper data={state.data} setState={setState} />
             <div className="comments-wrapper">
                 <h2>Comments section</h2>
-                <Comment key={state.data._id} data={state.data}/>
+                <Comment key={state.data._id} data={state.data} setState={setState} />
             </div>
         </section>
     );

@@ -9,6 +9,7 @@
 // [x] form validation
 // [x] wrap comment text - currently overflowing  
 // [ ] calculate discount
+// [ ] update details state when adding a comment
 // [ ] show buy button in the details page for non-admin users
 // [ ] show quantity in the details view
 // [x] implement admin role

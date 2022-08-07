@@ -66,6 +66,9 @@ export const updateBookComments = (commentData, bookId, accessToken) => {
         },
         body: JSON.stringify(commentData),
     })
+        .then(response => response.json())
+        .then(data => data)
+        .catch(error => console.log(error));
 }
 
 export const deleteBookRecord = (bookId, accessToken) => {

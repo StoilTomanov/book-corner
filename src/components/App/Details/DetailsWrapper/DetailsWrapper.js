@@ -69,8 +69,8 @@ export const DetailsWrapper = (props) => {
         props.setState((oldState) => ({...oldState}));
         ev.preventDefault();
         updateBookComments(commentData, props.data._id, authData.accessToken)
-            .then(()=>{
-                //TODO: find a way to update the props of the comments component so it can re-render
+            .then((data)=>{
+                props.setState((prevState) => ({...prevState, data}))
             })
         setTimeout(() => {
             setComment(() => ({
