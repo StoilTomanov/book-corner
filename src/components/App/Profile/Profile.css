@@ -1,6 +1,7 @@
 section.profile-page {
     display: flex;
     margin-top: 15rem;
+    position: relative;
 }
 
 div.form-header {
@@ -16,17 +17,14 @@ div.form-header {
     position: relative;
 }
 
-.profile-image {
-    position: relative;
-    top: 110px;
-    z-index: 90;
-}
-
-.profile-image img {
-    width: 120%;
-    position: relative;
-    right: 1.8rem;
-    bottom: 15rem;
+.profile-image img.avatar {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    border-radius: 100%;
+    left: 40rem;
+    top: -7rem;
+    z-index: 99;
 }
 
 div.horizontal-divider {
@@ -42,8 +40,8 @@ div.horizontal-divider {
     justify-content: space-evenly;
     width: 100%;
     position: relative;
-    bottom: 35px;
-    height: 2rem;
+    bottom: 43px;
+    height: 3rem;
 }
 
 .all-tabs button {
@@ -81,10 +79,10 @@ div.vertical-divider {
 
 .profile-content {
     position: relative;
+    top: 5rem;
     text-align: center;
     width: 80%;
     font-size: 110%;
-    /* Change this as soon you start filling the content */
     height: 500px;
     min-height: calc(100vh - 140px - 86.4px);
 }

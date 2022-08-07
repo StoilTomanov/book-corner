@@ -15,9 +15,9 @@ const userSchema = new Schema({
         type: String,
         default: function() {
             if (this.gender === 'Male') {
-                return '../male_avatar.jpg';
+                return 'assets/male_avatar.jpg';
             } else {
-                return '../female_avatar.gif';
+                return 'assets/female_avatar.gif';
             }
         }
     },
