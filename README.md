@@ -36,7 +36,7 @@
 
 - Only `admin` account will have the functionality to create and edit courses
 
-### Module and Components
+### Components
 
 #### App module
 - App
