@@ -56,6 +56,18 @@ export const updateBookRecord = (bookData, bookId, accessToken) => {
         .catch(error => console.log(error));
 }
 
+export const updateBookComments = (commentData, bookId, accessToken) => {
+    console.log(commentData);
+    return fetch(`${apiUrl}comments/${bookId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken,
+        },
+        body: JSON.stringify(commentData),
+    })
+}
+
 export const deleteBookRecord = (bookId, accessToken) => {
     return fetch(apiUrl + bookId, {
         method: 'DELETE',

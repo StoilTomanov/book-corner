@@ -97,10 +97,10 @@ div.aside-image img {
 }
 
 span.fa {
-    color: red;
+    color: rgb(138, 138, 138);
 }
 
-span.fa-star {
+span.fa-star.checked {
     color: orange;
     font-size: 120%;
     cursor: pointer;
@@ -108,7 +108,8 @@ span.fa-star {
 }
 
 span.fa-star:hover~span {
-    color: rgba(72, 72, 72, 0.584);
+    font-size: 110%;
+    color: rgba(168, 201, 243, 0.584);
     cursor: pointer;
     transition: 0.2s;
 }

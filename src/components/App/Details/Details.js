@@ -20,7 +20,7 @@ export const Details = () => {
             <DetailsWrapper data={state.data}/>
             <div className="comments-wrapper">
                 <h2>Comments section</h2>
-                <Comment key={state.data._id} comments={state.data}/>
+                <Comment key={state.data._id} data={state.data}/>
             </div>
         </section>
     );

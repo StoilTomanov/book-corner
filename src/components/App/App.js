@@ -7,6 +7,7 @@
 // [x] implement edit functionality
 // [x] implement delete functionality
 // [x] form validation
+// [ ] wrap comment text - currently overflowing  
 // [ ] calculate discount
 // [ ] show buy button in the details page for non-admin users
 // [ ] show quantity in the details view
