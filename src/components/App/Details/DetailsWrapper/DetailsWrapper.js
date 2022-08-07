@@ -66,6 +66,7 @@ export const DetailsWrapper = (props) => {
     }
 
     const submitHandler = (ev) => {
+        props.setState((oldState) => ({...oldState}));
         ev.preventDefault();
         updateBookComments(commentData, props.data._id, authData.accessToken)
             .then(()=>{

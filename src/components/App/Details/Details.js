@@ -17,7 +17,7 @@ export const Details = () => {
 
     return (
         <section className="details-page">
-            <DetailsWrapper data={state.data}/>
+            <DetailsWrapper data={state.data} setState={setState}/>
             <div className="comments-wrapper">
                 <h2>Comments section</h2>
                 <Comment key={state.data._id} data={state.data}/>
