@@ -38,7 +38,6 @@
 
 ### Components
 
-#### App module
 - App
 - Login
 - Registration
