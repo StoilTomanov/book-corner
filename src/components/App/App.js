@@ -7,7 +7,7 @@
 // [x] implement edit functionality
 // [x] implement delete functionality
 // [x] form validation
-// [ ] wrap comment text - currently overflowing  
+// [x] wrap comment text - currently overflowing  
 // [ ] calculate discount
 // [ ] show buy button in the details page for non-admin users
 // [ ] show quantity in the details view
@@ -18,8 +18,8 @@
 // [ ] complete the filtering in the catalog page
 // [ ] complete the filtering in the upcoming page
 // [ ] complete the filtering in the on-sale page
-// [ ] implement rating
-// [ ] non-admin users should be able to post comments/feedback with the rating
+// [x] implement rating
+// [x] non-admin users should be able to post comments/feedback with the rating
 // [ ] implement the bin view - modal
 // [ ] checkout in bin view
 // [ ] implement profile view
