@@ -110,7 +110,12 @@ function App () {
               <GuestGuard>
                 <Profile />
               </GuestGuard>
-            )} />
+            )}>
+              <Route path='/profile/profile' element={<h1>Hello from Profile</h1>}></Route>
+              <Route path='/profile/orders' element={<h1>Hello from Orders</h1>}></Route>
+              <Route path='/profile/addresses' element={<h1>Hello from Addresses</h1>}></Route>
+              <Route path='/profile/info' element={<h1>Hello from Info</h1>}></Route>
+            </Route>
             <Route path='/upcoming' element={<Upcoming />} />
             <Route path='/sale' element={<OnSale />} />
             <Route path='/privacy' element={<Privacy />} />

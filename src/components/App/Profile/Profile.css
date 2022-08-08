@@ -86,3 +86,13 @@ div.vertical-divider {
     height: 500px;
     min-height: calc(100vh - 140px - 86.4px);
 }
+
+.all-tabs a {
+    text-decoration: none;
+    color: black;
+}
+
+.all-tabs a:hover {
+    text-decoration: none;
+    color: var(--text-color);
+}
