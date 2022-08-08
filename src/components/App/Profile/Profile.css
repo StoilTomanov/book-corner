@@ -24,6 +24,8 @@ div.form-header {
     border-radius: 100%;
     left: 40rem;
     top: -7rem;
+    border: 2px outset rgb(109, 109, 109);
+    box-shadow: 5px 5px 20px 7px rgb(88, 88, 88);
     z-index: 99;
 }
 
@@ -90,9 +92,34 @@ div.vertical-divider {
 .all-tabs a {
     text-decoration: none;
     color: black;
+    font-size: 130%;
+    background: none;
+    width: 10rem;
+    height: 1.9rem;
+    transition: 0.3s;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.all-tabs a.checked {
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--btn-background-color);
 }
 
 .all-tabs a:hover {
     text-decoration: none;
     color: var(--text-color);
+    font-size: 120%;
+    background-color: var(--btn-background-color);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.all-tabs a:active {
+    font-size: 120%;
+    background-color: var(--background-color-1);
+    color: var(--btn-background-color);
+    border-radius: 15px;
+    transition: 0.3s;
 }

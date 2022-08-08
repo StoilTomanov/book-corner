@@ -38,6 +38,9 @@
 // [x] add comment to the book model - e.g. {username: Josh123, comment: 'Really cool book'}
 // [ ] implement search functionality
 
+// My Place: List of bought books, messages - toggle rows
+// Info: Form to update username, email and password, Form to update contacts (birth date, address, telephone, etc) - toggle rows
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import './App.css';
@@ -66,6 +69,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { useSession } from '../../hooks/useSession';
 import { GuestGuard } from '../../guards/GuestGuard';
 import { LoggedGuard } from '../../guards/LoggedGuard';
+import { MyPlace } from './Profile/PersonalInfo/MyPlace';
+import { Info } from './Profile/ProfileTab/Info';
 
 function App () {
   const [authData, setAuthData] = useSession('auth', {});
@@ -111,10 +116,8 @@ function App () {
                 <Profile />
               </GuestGuard>
             )}>
-              <Route path='/profile/profile' element={<h1>Hello from Profile</h1>}></Route>
-              <Route path='/profile/orders' element={<h1>Hello from Orders</h1>}></Route>
-              <Route path='/profile/addresses' element={<h1>Hello from Addresses</h1>}></Route>
-              <Route path='/profile/info' element={<h1>Hello from Info</h1>}></Route>
+              <Route path='/profile/myplace' element={<MyPlace />}></Route>
+              <Route path='/profile/info' element={<Info />}></Route>
             </Route>
             <Route path='/upcoming' element={<Upcoming />} />
             <Route path='/sale' element={<OnSale />} />
