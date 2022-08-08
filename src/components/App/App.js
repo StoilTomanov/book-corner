@@ -25,7 +25,6 @@
 // [x] implement profile view
 // [x] complete the tabs in the profile view
 // [ ] upload avatar for the profile view
-// [ ] finish forms in profile view
 // [ ] finish messages in profile view once they are implemented
 // [ ] edit functionality on the profile data (addresses, personal info, etc.)
 // [x] guest should see catalog and details without functional activities (edit, delete, rate, etc.)
