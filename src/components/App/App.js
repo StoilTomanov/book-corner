@@ -69,8 +69,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { useSession } from '../../hooks/useSession';
 import { GuestGuard } from '../../guards/GuestGuard';
 import { LoggedGuard } from '../../guards/LoggedGuard';
-import { MyPlace } from './Profile/PersonalInfo/MyPlace';
-import { Info } from './Profile/ProfileTab/Info';
+import { MyPlace } from './Profile/MyPlace/MyPlace';
+import { Info } from './Profile/Info/Info';
 
 function App () {
   const [authData, setAuthData] = useSession('auth', {});

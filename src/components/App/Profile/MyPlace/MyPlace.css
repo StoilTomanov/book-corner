@@ -1,0 +1,58 @@
+.myplace-content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+div.toggle {
+    display: none;
+    text-align: left;
+    border: 1px inset rgb(33, 33, 33);
+    border-top: none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 1px 10px 10px rgb(65, 65, 65);
+}
+
+button#toggle-messages {
+    width: 100.3%;
+    position: relative;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    left: -0.65rem;
+    top: 0.7rem;
+    text-align: left;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: var(--background-color-1);
+    font-weight: 900;
+}
+
+button#toggle-book-list {
+    width: 100.3%;
+    position: relative;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    left: -0.65rem;
+    top: 0.7rem;
+    text-align: left;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: var(--background-color-1);
+    font-weight: 900;
+}
+
+button#toggle-book-list:hover {
+    transition: 0.2;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+button#toggle-messages:hover {
+    transition: 0.2;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

@@ -33,6 +33,8 @@
 @import url(./components/App/Upcoming/UpcomingBookItem/UpcomingBookItem.css);
 @import url(./components/App/Details/Comment/Comment.css);
 @import url(./components/App/Details/DetailsWrapper/DetailsWrapper.css);
+@import url(./components/App/Profile/Info/Info.css);
+@import url(./components/App/Profile/MyPlace/MyPlace.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
