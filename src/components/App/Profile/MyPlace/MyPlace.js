@@ -15,17 +15,46 @@ export const MyPlace = () => {
     return (
         <div className="myplace-content-wrapper">
             <button onClick={toggleContentHandler} id="toggle-messages"><FontAwesomeIcon icon={faCaretDown} /> Messages</button>
-            <div className="toggle">
-                <ol>
-                    <li>asdsd</li>
-                    <li>asdsd</li>
-                    <li>asdsd</li>
-                    <li>asdsd</li>
-                </ol>
+            <div id="message-toggle" className="toggle">
+                <div className="message-element">
+                    <p>Date: 9-23-2022</p>
+                    <p>Sender: _admin</p>
+                    <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="delete-message">Delete</button>
+                </div>
+                <div className="message-divider"></div>
+                <div className="message-element">
+                    <p>Date: 9-23-2022</p>
+                    <p>Sender: _admin</p>
+                    <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="delete-message">Delete</button>
+                </div>
+                <div className="message-divider"></div>
+                <div className="message-element">
+                    <p>Date: 9-23-2022</p>
+                    <p>Sender: _admin</p>
+                    <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="delete-message">Delete</button>
+                </div>
+                <div className="message-divider"></div>
+                <div className="message-element">
+                    <p>Date: 9-23-2022</p>
+                    <p>Sender: _admin</p>
+                    <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="delete-message">Delete</button>
+                </div>
+                <div className="message-divider"></div>
             </div>
             <button onClick={toggleContentHandler} id="toggle-book-list"><FontAwesomeIcon icon={faCaretDown} /> Bought books</button>
-            <div className="toggle">
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempora, obcaecati non quod ut nesciunt quis quo ullam voluptatem? Consectetur soluta, earum beatae excepturi laboriosam qui voluptatem molestiae enim fugit!</div>
+            <div id="book-list-toggle" className="toggle">
+                <div>
+                    <ol>
+                        <li>asdsd</li>
+                        <li>asdsd</li>
+                        <li>asdsd</li>
+                        <li>asdsd</li>
+                    </ol>
+                </div>
             </div>
         </div>
     );

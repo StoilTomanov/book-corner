@@ -183,3 +183,32 @@ div.details-elements {
 div.book-title {
     font-size: 160%;
 }
+
+.buy-book-btn {
+    width: 140px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 2rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+    font-size: 100%;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 1px rgb(63, 63, 63);
+    position: relative;
+    top: 6px;
+    left: -6px;
+}
+
+.buy-book-btn:hover {
+    background-color: white;
+    color: black;
+    border-radius: 2rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+}
+
+.buy-book-btn:active {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: none;
+}

@@ -15,6 +15,16 @@ div.toggle {
     box-shadow: 1px 10px 10px rgb(65, 65, 65);
 }
 
+#profile-details-toggle {
+    height: 150px;
+    overflow: scroll;
+}
+
+#personal-info-toggle {
+    height: 150px;
+    overflow: scroll;
+}
+
 button#toggle-profile-details {
     width: 100.3%;
     position: relative;
@@ -55,4 +65,36 @@ button#toggle-profile-details:hover {
     transition: 0.2;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+input.profile-input {
+    width: 30%;
+    font-size: 90%;
+    padding: 5px;
+}
+
+.update-user-data {
+    width: 150px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 1px rgb(63, 63, 63);
+}
+
+.update-user-data:hover {
+    width: 150px;
+    background-color: var(--background-color-1);
+    color: var(--background-color);
+    border-radius: 1rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+}
+
+.update-user-data:active {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: none;
 }

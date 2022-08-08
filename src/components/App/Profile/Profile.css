@@ -2,6 +2,7 @@ section.profile-page {
     display: flex;
     margin-top: 15rem;
     position: relative;
+    margin-bottom: 5rem;
 }
 
 div.form-header {

@@ -15,17 +15,36 @@ export const Info = () => {
     return (
         <div className="info-content-wrapper">
             <button onClick={toggleContentHandler} id="toggle-profile-details"><FontAwesomeIcon icon={faCaretDown} /> Profile details</button>
-            <div className="toggle">
-                <ol>
-                    <li>asdsd</li>
-                    <li>asdsd</li>
-                    <li>asdsd</li>
-                    <li>asdsd</li>
-                </ol>
+            <div id="profile-details-toggle" className="toggle">
+                <form>
+                    <input className="profile-input" type="text" placeholder="Username" />
+                    <button className="update-user-data" type="submit">Update</button>
+                </form>
+                <form>
+                    <input className="profile-input" type="text" placeholder="Email" />
+                    <button className="update-user-data" type="submit">Update</button>
+                </form>
+                <form>
+                    <input className="profile-input" type="password" placeholder="Password" />
+                    <button className="update-user-data" type="submit">Update</button>
+                </form>
             </div>
             <button onClick={toggleContentHandler} id="toggle-personal-info"><FontAwesomeIcon icon={faCaretDown} /> Personal Info</button>
-            <div className="toggle">
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tempora, obcaecati non quod ut nesciunt quis quo ullam voluptatem? Consectetur soluta, earum beatae excepturi laboriosam qui voluptatem molestiae enim fugit!</div>
+            <div id="personal-info-toggle" className="toggle">
+                <div>
+                <form>
+                    <input className="profile-input" type="text" placeholder="Address" />
+                    <button className="update-user-data" type="submit">Update</button>
+                </form>
+                <form>
+                    <input className="profile-input" type="text" placeholder="Telephone" />
+                    <button className="update-user-data" type="submit">Update</button>
+                </form>
+                <form>
+                    <input className="profile-input" type="date" placeholder="Birth Date" />
+                    <button className="update-user-data" type="submit">Update</button>
+                </form>
+                </div>
             </div>
         </div>
     );

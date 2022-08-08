@@ -3,6 +3,16 @@
     flex-direction: column;
 }
 
+#message-toggle {
+    height: 150px;
+    overflow: scroll;
+}
+
+#book-list-toggle {
+    height: 150px;
+    overflow: scroll;
+}
+
 div.toggle {
     display: none;
     text-align: left;
@@ -55,4 +65,35 @@ button#toggle-messages:hover {
     transition: 0.2;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+.message-divider {
+    border: 1px solid rgb(106, 179, 239);
+    width: 100%;
+}
+
+.delete-message {
+    width: 150px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 1px rgb(63, 63, 63);
+}
+
+.delete-message:hover {
+    width: 150px;
+    background-color: var(--background-color-1);
+    color: var(--background-color);
+    border-radius: 1rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+}
+
+.delete-message:active {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: none;
 }

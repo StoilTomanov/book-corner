@@ -9,7 +9,7 @@
 // [x] form validation
 // [x] wrap comment text - currently overflowing  
 // [x] update details state when adding a comment
-// [ ] show buy button in the details page for non-admin users
+// [x] show buy button in the details page for non-admin users
 // [ ] show quantity in the details view
 // [x] implement admin role
 // [x] implement edit button for book record
@@ -22,9 +22,11 @@
 // [x] non-admin users should be able to post comments/feedback with the rating
 // [ ] implement the bin view - modal
 // [ ] checkout in bin view
-// [ ] implement profile view
-// [ ] complete the tabs in the profile view
+// [x] implement profile view
+// [x] complete the tabs in the profile view
 // [ ] upload avatar for the profile view
+// [ ] finish forms in profile view
+// [ ] finish messages in profile view once they are implemented
 // [ ] edit functionality on the profile data (addresses, personal info, etc.)
 // [x] guest should see catalog and details without functional activities (edit, delete, rate, etc.)
 // [ ] create modal with the categories
