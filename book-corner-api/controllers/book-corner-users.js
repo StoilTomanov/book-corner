@@ -67,4 +67,46 @@ async function userRequestHandler(req, res, path, userData, statusCode) {
     }
 }
 
+// Messages
+
+router.patch('/regular/messages/:action/:email', async(req, res) => {
+    const action = req.params.action;
+    const email = req.params.email;
+    const message = req.body;
+    try {
+        if(action === 'update') {
+            const result = await userService.updateUserMessages(email, message);
+            res.status(200).json(result);
+        } else if (action === 'delete') {
+            const result = await userService.deleteUserMessages(email, message);
+            res.status(200).json(result);
+        }
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = errorMapper(error);
+        res.status(400).json({ message: mappedError });
+    }
+    // Seems that sending messages to admin is working properly for both guest and logged users.
+    // TODO: admin should be able to send replies
+});
+
+router.patch('/admin/messages/:action/', async(req, res) => {
+    const action = req.params.action;
+    const email = 'admin_email';
+    const message = req.body.message;
+    try {
+        if(action === 'update') {
+            const result = await userService.updateUserMessages(email, message);
+            res.status(200).json(result);
+        } else if (action === 'delete') {
+            const result = await userService.deleteUserMessages(email, message);
+            res.status(200).json(result);
+        }
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = errorMapper(error);
+        res.status(400).json({ message: mappedError });
+    }
+});
+
 module.exports = router;

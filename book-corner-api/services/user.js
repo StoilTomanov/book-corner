@@ -79,10 +79,53 @@ function createSession(user) {
     };
 }
 
+// Messages
+
+async function updateUserMessages(email, message) {
+    let searchKey = {};
+    if(email === 'admin_email') {
+        searchKey.email = email;
+    } else {
+        searchKey.isAdmin = true;
+    }
+    const result = await User.findOne(searchKey);
+    result.messages.push({
+        message,
+    });
+    await result.save();
+    return result;
+    // Seems that sending messages to admin is working properly for both guest and logged users.
+    // TODO: admin should be able to send replies
+}
+
+async function deleteUserMessages(email, message) {
+    let searchKey = {};
+
+    if(email === 'admin_email') {
+        searchKey.isAdmin = true;
+    } else {
+        searchKey.email = email;
+    }
+    
+    const result = await User.findOne(searchKey);
+    let indexToRemove = 0;
+    result.messages.map((msg, index) => {
+        if(msg._id === message._id) {
+            indexToRemove = index;
+        }
+        return msg;
+    });
+    result.messages.splice(indexToRemove, 1);
+    await result.save();
+    return result;
+}
+
 module.exports = {
     verifySession,
     login,
     register,
     logout,
     getUserData,
+    updateUserMessages,
+    deleteUserMessages,
 }

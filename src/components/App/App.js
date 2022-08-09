@@ -18,6 +18,7 @@
 // [ ] complete the filtering in the catalog page
 // [ ] complete the filtering in the upcoming page
 // [ ] complete the filtering in the on-sale page
+// [ ] add email validation
 // [x] implement rating
 // [x] non-admin users should be able to post comments/feedback with the rating
 // [ ] implement the bin view - modal
@@ -31,8 +32,6 @@
 // [ ] create modal with the categories
 // [x] show/hide links based on role and authentication
 // [ ] complete the contact form
-// [ ] create inbox icon for each user
-// [ ] create inbox icon for admin
 // [ ] user should be able to reply to admin's messages
 // [ ] admin should be able to reply to user's messages
 // [ ] get a confirmation when Buy is clicked

@@ -35,6 +35,10 @@ button.send-contact-form:active {
     position: relative;
 }
 
+.contact-form form .error-wrapper {
+    font-size: 150%;
+}
+
 .contact-form input {
     /* display: block; */
     border-radius: 10px;

@@ -20,6 +20,7 @@ export const MyPlace = () => {
                     <p>Date: 9-23-2022</p>
                     <p>Sender: _admin</p>
                     <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="reply-message">Reply</button>
                     <button className="delete-message">Delete</button>
                 </div>
                 <div className="message-divider"></div>
@@ -27,6 +28,7 @@ export const MyPlace = () => {
                     <p>Date: 9-23-2022</p>
                     <p>Sender: _admin</p>
                     <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="reply-message">Reply</button>
                     <button className="delete-message">Delete</button>
                 </div>
                 <div className="message-divider"></div>
@@ -34,6 +36,7 @@ export const MyPlace = () => {
                     <p>Date: 9-23-2022</p>
                     <p>Sender: _admin</p>
                     <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="reply-message">Reply</button>
                     <button className="delete-message">Delete</button>
                 </div>
                 <div className="message-divider"></div>
@@ -41,6 +44,7 @@ export const MyPlace = () => {
                     <p>Date: 9-23-2022</p>
                     <p>Sender: _admin</p>
                     <p>Message: Hello User. I have seen your message. The issue is fixed</p>
+                    <button className="reply-message">Reply</button>
                     <button className="delete-message">Delete</button>
                 </div>
                 <div className="message-divider"></div>

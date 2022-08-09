@@ -72,6 +72,32 @@ button#toggle-messages:hover {
     width: 100%;
 }
 
+.reply-message {
+    width: 150px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 1px rgb(63, 63, 63);
+}
+
+.reply-message:hover {
+    width: 150px;
+    background-color: var(--background-color-1);
+    color: var(--background-color);
+    border-radius: 1rem;
+    border: 1px solid var(--background-color);
+    transition: 0.3s;
+}
+
+.reply-message:active {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: none;
+}
+
 .delete-message {
     width: 150px;
     background-color: var(--background-color);

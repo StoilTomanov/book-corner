@@ -158,6 +158,7 @@ button {
     color: #ff0000;
     text-shadow: 1px 1px 1px #353535;
     font-size: 100%;
+    width: auto;
 }
 
 .filter-form {

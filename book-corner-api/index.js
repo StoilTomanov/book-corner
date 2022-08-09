@@ -17,7 +17,6 @@ initRest();
 async function initRest() {
     const app = express();
     const port = 4000;
-    //TODO: check if database is imported correctly
     await database.initDb();
 
     app.use(express.json());
