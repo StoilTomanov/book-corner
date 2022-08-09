@@ -53,7 +53,7 @@ export const ContactForm = () => {
             console.log(contactData);
             updateMessages('update', authData.email || contactData.from, false, contactData)
                 .then();
-            // navigate('/catalog');
+            navigate('/catalog');
         }
     }
 
