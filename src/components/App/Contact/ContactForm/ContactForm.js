@@ -49,9 +49,9 @@ export const ContactForm = () => {
         if(!checkFormData(contactData)) {
             setError(error => error = true);
         } else {
-            console.log(contactData);
             updateMessages('update', authData.email || contactData.from, false, contactData)
                 .then();
+                console.log(contactData)
             navigate('/catalog');
         }
     }

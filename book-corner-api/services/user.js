@@ -82,28 +82,55 @@ function createSession(user) {
 
 // Messages
 
-async function updateUserMessages(email, message) {
+async function updateUserMessages(email, emailReceiver, message) {
     let searchKey = {};
     if(email === 'admin_email') {
-        searchKey.email = email;
-    } else {
         searchKey.isAdmin = true;
+    } else {
+        searchKey.email = email;
     }
-    const result = await User.findOne(searchKey);
-    const newMsg = new Message({
-        from: message.from,
-        topic: message.topic,
-        message: message.message,
-        isAdmin: email === 'admin_email' ? true : false,
-    });
-    const sentMsg = await newMsg.save();
-    result.messages.push({
-        sentMsg,
-    });
-    await result.save();
-    return result;
-    // Seems that sending messages to admin is working properly for both guest and logged users.
-    // TODO: admin should be able to send replies
+    if(emailReceiver === null) {
+        const result = await User.findOne(searchKey);
+        const newMsg = new Message({
+            from: message.from,
+            topic: message.topic,
+            message: message.message,
+            isAdmin: email === 'admin_email' ? true : false,
+        });
+        const sentMsg = await newMsg.save();
+        result.messages.push({
+            sentMsg,
+        });
+        await result.save();
+        return result;
+    } else {
+        const result = await User.findOne({ email: emailReceiver });
+        if(result !== null) {
+            const newMsg = new Message({
+                from: message.from,
+                topic: message.topic,
+                message: message.message,
+                isAdmin: email === 'admin_email' ? true : false,
+            });
+            const sentMsg = await newMsg.save();
+            result.messages.push({
+                sentMsg,
+            });
+            await result.save();
+        }
+
+        const adminResult = await User.findOne({ isAdmin: true });
+        let indexToRemove = 0;
+        adminResult.messages.map((msg, index) => {
+            if(msg.sentMsg._id === message.message_id) {
+                indexToRemove = index;
+            }
+            return msg;
+        });
+        adminResult.messages.splice(indexToRemove, 1);
+        await adminResult.save();
+        return adminResult;
+    }
 }
 
 async function deleteUserMessages(email, message) {
@@ -118,7 +145,7 @@ async function deleteUserMessages(email, message) {
     const result = await User.findOne(searchKey);
     let indexToRemove = 0;
     result.messages.map((msg, index) => {
-        if(msg._id === message._id) {
+        if(msg.sentMsg._id === message.message_id) {
             indexToRemove = index;
         }
         return msg;

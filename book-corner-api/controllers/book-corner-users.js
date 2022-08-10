@@ -73,10 +73,15 @@ async function userRequestHandler(req, res, path, userData, statusCode) {
 router.patch('/regular/messages/:action/:email', async(req, res) => {
     const action = req.params.action;
     const email = req.params.email;
-    const message = req.body;
+    const message = req.body.message;
+    console.log(message);
     try {
         if(action === 'update') {
-            const result = await userService.updateUserMessages(email, message);
+            const result = await userService.updateUserMessages(email, null, message);
+            res.status(200).json(result);
+        } else if (action === 'reply') {
+            //TODO: message	"Cannot read properties of null (reading 'messages')"
+            const result = await userService.updateUserMessages('admin_email', null, message);
             res.status(200).json(result);
         } else if (action === 'delete') {
             const result = await userService.deleteUserMessages(email, message);
@@ -87,17 +92,19 @@ router.patch('/regular/messages/:action/:email', async(req, res) => {
         const mappedError = errorMapper(error);
         res.status(400).json({ message: mappedError });
     }
-    // Seems that sending messages to admin is working properly for both guest and logged users.
-    // TODO: admin should be able to send replies
 });
 
 router.patch('/admin/messages/:action/', async(req, res) => {
     const action = req.params.action;
     const email = 'admin_email';
+    const emailReceiver = req.body.receiver;
     const message = req.body.message;
     try {
         if(action === 'update') {
-            const result = await userService.updateUserMessages(email, message);
+            const result = await userService.updateUserMessages(email, null, message);
+            res.status(200).json(result);
+        } else if (action === 'reply') {
+            const result = await userService.updateUserMessages(email, emailReceiver, message);
             res.status(200).json(result);
         } else if (action === 'delete') {
             const result = await userService.deleteUserMessages(email, message);

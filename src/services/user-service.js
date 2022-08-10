@@ -96,7 +96,7 @@ export const getCurrentUser = async(accessToken, userId) => {
     }
 }
 
-export const updateMessages = async(action, email, isAdmin, message) => {
+export const updateMessages = async(action, email, isAdmin, message, receiver) => {
     try {
         let response;
         if(isAdmin === true) {
@@ -105,7 +105,7 @@ export const updateMessages = async(action, email, isAdmin, message) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(message),
+                body: JSON.stringify({message, receiver}),
             });
         } else if (isAdmin === false) {
             response = await fetch(userURL + `regular/messages/${action}/${email}`, {
@@ -113,9 +113,7 @@ export const updateMessages = async(action, email, isAdmin, message) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(message),
-                // Seems that sending messages to admin is working properly for both guest and logged users.
-                // TODO: admin should be able to send replies
+                body: JSON.stringify({message}), 
             });
         }
 
