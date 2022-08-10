@@ -26,12 +26,12 @@
 // [x] implement profile view
 // [x] complete the tabs in the profile view
 // [ ] upload avatar for the profile view
-// [ ] finish messages in profile view once they are implemented
+// [x] finish messages in profile view once they are implemented
 // [ ] edit functionality on the profile data (addresses, personal info, etc.)
 // [x] guest should see catalog and details without functional activities (edit, delete, rate, etc.)
 // [ ] create modal with the categories
 // [x] show/hide links based on role and authentication
-// [ ] complete the contact form
+// [x] complete the contact form
 // [ ] user should be able to reply to admin's messages
 // [ ] admin should be able to reply to user's messages
 // [ ] get a confirmation when Buy is clicked
