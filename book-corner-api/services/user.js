@@ -95,9 +95,10 @@ async function updateUserMessages(email, message) {
         topic: message.topic,
         message: message.message,
         isAdmin: email === 'admin_email' ? true : false,
-    })
+    });
+    const sentMsg = await newMsg.save();
     result.messages.push({
-        message,
+        sentMsg,
     });
     await result.save();
     return result;

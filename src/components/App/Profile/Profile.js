@@ -22,7 +22,7 @@ export const Profile = () => {
                 <div className="all-tabs">
                     <Link to="/profile/myplace" className={pathname === '/profile/myplace' ? 'checked' : ''}>My Place</Link>
                     <div className="profile-image">
-                        <img src={user.profilePicture} alt="" className="avatar" />
+                        <img src={`/${user.profilePicture}`} alt="" className="avatar" />
                     </div>
                     <Link to="/profile/info" className={pathname === '/profile/info' ? 'checked' : ''}>Personal info</Link>
                 </div>

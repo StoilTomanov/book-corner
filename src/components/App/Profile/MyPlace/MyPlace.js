@@ -12,6 +12,7 @@ export const MyPlace = () => {
         getCurrentUser(authData.accessToken, authData._id)
         .then(data => {
             setUser(user => user = data);
+            // when fetching user data it receives the hashed password as well. REMOVE THAT!
         });
     }, [authData._id, authData.accessToken]);
     
@@ -27,19 +28,18 @@ export const MyPlace = () => {
     }
 
     //TODO: add the date
-    //TODO: add id to the messages
-
     return (
         <div className="myplace-content-wrapper">
             <button onClick={toggleContentHandler} id="toggle-messages"><FontAwesomeIcon icon={faCaretDown} /> Messages</button>
             <div id="message-toggle" className="toggle">
                 {user.messages !== undefined ? user.messages.map((msg, index) => {
                     return(
-                        <div key={index}>
+                        <div key={msg.sentMsg._id}>
                             <div className="message-element">
-                                <p>Date: 9-23-2022</p>
-                                <p>Sender: {msg.message.from}</p>
-                                <p>Message: {msg.message.message}</p>
+                                <p>Date: {msg.sentMsg.data}</p>
+                                <p>Sender: {msg.sentMsg.from}</p>
+                                <p>Topic: {msg.sentMsg.topic}</p>
+                                <p>Message: {msg.sentMsg.message}</p>
                                 <button className="reply-message">Reply</button>
                                 <button className="delete-message">Delete</button>
                             </div>

@@ -55,6 +55,7 @@ async function userRequestHandler(req, res, path, userData, statusCode) {
                 break;
             case '/user/:id':
                 result = await userService.getUserData(userData.userId);
+                result.hashedPassword = '';
                 break;
             default:
                 console.error('No such path');
