@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const Message = require( '../models/Messages' );
 const User = require('../models/User');
 const JWT_SECRET = require('../utils/jwt-secret');
 
@@ -89,6 +90,12 @@ async function updateUserMessages(email, message) {
         searchKey.isAdmin = true;
     }
     const result = await User.findOne(searchKey);
+    const newMsg = new Message({
+        from: message.from,
+        topic: message.topic,
+        message: message.message,
+        isAdmin: email === 'admin_email' ? true : false,
+    })
     result.messages.push({
         message,
     });

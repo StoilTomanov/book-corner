@@ -38,7 +38,7 @@ export const ContactForm = () => {
         ev.preventDefault();
         const formData = new FormData(ev.target);
         if(authData._id) {
-            formData.append('senderId', authData._id);
+            formData.append('from', authData.email);
         }
         if(authData.isAdmin) {
             formData.append('isAdmin', authData.isAdmin);
@@ -49,7 +49,6 @@ export const ContactForm = () => {
         if(!checkFormData(contactData)) {
             setError(error => error = true);
         } else {
-            //TODO send request
             console.log(contactData);
             updateMessages('update', authData.email || contactData.from, false, contactData)
                 .then();
