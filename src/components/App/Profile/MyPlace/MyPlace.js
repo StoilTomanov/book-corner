@@ -3,10 +3,17 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../contexts/AuthContext";
 import { getCurrentUser, updateMessages } from "../../../../services/user-service";
+import { Modal } from "../../Modal/Modal";
 
 export const MyPlace = () => {
     const {authData} = useContext(AuthContext);
     const [user, setUser] = useState({});
+    const [reply, setReply] = useState({
+        email: '',
+        topic: '',
+        message: '',
+    });
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(()=>{
         getCurrentUser(authData.accessToken, authData._id)
@@ -29,8 +36,11 @@ export const MyPlace = () => {
     };
     
     const replyMessageHandler = (ev) => {
-        console.log(ev.target.parentElement.children);
-        // updateMessages('reply', authData.email, authData.isAdmin, {from: 'test@abv.bg', topic: 'Our books', message: 'Hey there'}, ev.target.dataset.from);
+        setShowModal(true);
+        setReply({
+            email: ev.target.parentElement.children[1].textContent.split(': ')[1],
+            topic: ev.target.parentElement.children[2].textContent.split(': ')[1],
+        })
     };
 
     return (
@@ -45,7 +55,7 @@ export const MyPlace = () => {
                             <p className="msg-paragraph">Sender: {msg.sentMsg.from}</p>
                             <p className="msg-paragraph">Topic: {msg.sentMsg.topic}</p>
                             <p className="msg-paragraph">Message: {msg.sentMsg.message}</p>
-                            <button data-id={msg.sentMsg._id} data-from={msg.sentMsg.from} className="reply-message" onClick={replyMessageHandler}>Reply</button>
+                            <button data-id={msg.sentMsg._id} className="reply-message" onClick={replyMessageHandler}>Reply</button>
                             <button data-id={msg.sentMsg._id} className="delete-message" onClick={deleteMessageHandler}>Delete</button>
                         </div>
                         <div className="message-divider"></div>
@@ -64,6 +74,7 @@ export const MyPlace = () => {
                     </ol>
                 </div>
             </div>
+            {showModal && <Modal msgData={reply} hideModal={setShowModal} />}
         </div>
     );
 }

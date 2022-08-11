@@ -40,8 +40,8 @@ export const ContactForm = () => {
         if(authData._id) {
             formData.append('from', authData.email);
         }
-        if(authData.isAdmin) {
-            formData.append('isAdmin', authData.isAdmin);
+        if(authData.isAdmin === true) {
+            formData.append('isAdmin', true);
         } else {
             formData.append('isAdmin', false);
         }

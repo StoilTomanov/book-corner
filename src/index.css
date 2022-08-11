@@ -35,6 +35,7 @@
 @import url(./components/App/Details/DetailsWrapper/DetailsWrapper.css);
 @import url(./components/App/Profile/Info/Info.css);
 @import url(./components/App/Profile/MyPlace/MyPlace.css);
+@import url(./components/App/Modal/Modal.css);
 @font-face {
     font-family: external-font;
     src: url(../public/assets/ArchitectsDaughter-Regular.ttf);
