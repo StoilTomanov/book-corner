@@ -32,8 +32,8 @@
 // [ ] create modal with the categories
 // [x] show/hide links based on role and authentication
 // [x] complete the contact form
-// [ ] user should be able to reply to admin's messages
-// [ ] admin should be able to reply to user's messages
+// [x] user should be able to reply to admin's messages
+// [x] admin should be able to reply to user's messages
 // [ ] get a confirmation when Buy is clicked
 // [x] add comment to the book model - e.g. {username: Josh123, comment: 'Really cool book'}
 // [ ] implement search functionality
