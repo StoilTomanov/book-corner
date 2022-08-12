@@ -1,4 +1,4 @@
-const { model, Schema, Types: { ObjectId } } = require('mongoose');
+const { model, Schema } = require('mongoose');
 
 const userSchema = new Schema({
     email: { type: String, required: [true, 'Email is required.'] },
@@ -15,14 +15,14 @@ const userSchema = new Schema({
         type: String,
         default: function() {
             if (this.gender === 'Male') {
-                return '../male_avatar.jpg';
+                return 'assets/male_avatar.jpg';
             } else {
-                return '../female_avatar.gif';
+                return 'assets/female_avatar.gif';
             }
         }
     },
     messages: { type: [Object], default: [] },
-    books: { type: [ObjectId], default: [], ref: 'Book' },
+    books: { type: [''], default: [], ref: 'Book' },
     isAdmin: { type: Boolean, required: true },
     hashedPassword: { type: String, required: true },
 });

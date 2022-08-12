@@ -28,12 +28,11 @@ async function register(username, email, password, gender) {
     }
 
     const hasAdmin = await User.find({});
-    const newDate = new Date();
     const user = new User({
         email,
         username,
         gender,
-        isAdmin: hasAdmin.length == 0 ? true : false,
+        isAdmin: hasAdmin.length === 0 ? true : false,
         hashedPassword: await bcrypt.hash(password, 10),
     });
 
@@ -44,6 +43,11 @@ async function register(username, email, password, gender) {
 function logout(token) {
     blacklist.push(token);
     return [{ message: 'Logged out' }];
+}
+
+async function getUserData(userId) {
+    const result = await User.findOne({ _id: userId });
+    return result;
 }
 
 function verifySession(token) {
@@ -80,4 +84,5 @@ module.exports = {
     login,
     register,
     logout,
+    getUserData,
 }

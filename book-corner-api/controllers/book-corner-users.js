@@ -29,6 +29,15 @@ router.get('/logout', (req, res) => {
     }
 });
 
+router.get('/user/:id', async(req, res) => {
+    if(req.user) {
+        const userId = req.params.id;
+        userRequestHandler(req, res, '/user/:id', {
+            userId,
+        }, 200);
+    }
+});
+
 async function userRequestHandler(req, res, path, userData, statusCode) {
     let result;
     try {
@@ -43,6 +52,10 @@ async function userRequestHandler(req, res, path, userData, statusCode) {
                 break;
             case '/logout':
                 result = userService.logout(userData.token);
+                break;
+            case '/user/:id':
+                result = await userService.getUserData(userData.userId);
+                result.hashedPassword = '';
                 break;
             default:
                 console.error('No such path');

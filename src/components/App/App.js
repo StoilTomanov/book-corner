@@ -9,7 +9,7 @@
 // [x] form validation
 // [x] wrap comment text - currently overflowing  
 // [x] update details state when adding a comment
-// [ ] show buy button in the details page for non-admin users
+// [x] show buy button in the details page for non-admin users
 // [ ] show quantity in the details view
 // [x] implement admin role
 // [x] implement edit button for book record
@@ -18,25 +18,28 @@
 // [ ] complete the filtering in the catalog page
 // [ ] complete the filtering in the upcoming page
 // [ ] complete the filtering in the on-sale page
+// [ ] add email validation
 // [x] implement rating
 // [x] non-admin users should be able to post comments/feedback with the rating
 // [ ] implement the bin view - modal
 // [ ] checkout in bin view
-// [ ] implement profile view
-// [ ] complete the tabs in the profile view
+// [x] implement profile view
+// [x] complete the tabs in the profile view
 // [ ] upload avatar for the profile view
+// [x] finish messages in profile view once they are implemented
 // [ ] edit functionality on the profile data (addresses, personal info, etc.)
 // [x] guest should see catalog and details without functional activities (edit, delete, rate, etc.)
 // [ ] create modal with the categories
 // [x] show/hide links based on role and authentication
-// [ ] complete the contact form
-// [ ] create inbox icon for each user
-// [ ] create inbox icon for admin
+// [x] complete the contact form
 // [ ] user should be able to reply to admin's messages
 // [ ] admin should be able to reply to user's messages
 // [ ] get a confirmation when Buy is clicked
 // [x] add comment to the book model - e.g. {username: Josh123, comment: 'Really cool book'}
 // [ ] implement search functionality
+
+// My Place: List of bought books, messages - toggle rows
+// Info: Form to update username, email and password, Form to update contacts (birth date, address, telephone, etc) - toggle rows
 
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -66,6 +69,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { useSession } from '../../hooks/useSession';
 import { GuestGuard } from '../../guards/GuestGuard';
 import { LoggedGuard } from '../../guards/LoggedGuard';
+import { MyPlace } from './Profile/MyPlace/MyPlace';
+import { Info } from './Profile/Info/Info';
 
 function App () {
   const [authData, setAuthData] = useSession('auth', {});
@@ -110,7 +115,10 @@ function App () {
               <GuestGuard>
                 <Profile />
               </GuestGuard>
-            )} />
+            )}>
+              <Route path='/profile/myplace' element={<MyPlace />}></Route>
+              <Route path='/profile/info' element={<Info />}></Route>
+            </Route>
             <Route path='/upcoming' element={<Upcoming />} />
             <Route path='/sale' element={<OnSale />} />
             <Route path='/privacy' element={<Privacy />} />

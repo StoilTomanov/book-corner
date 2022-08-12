@@ -105,6 +105,7 @@ export const DetailsWrapper = (props) => {
                 </div>
                 <div className="price-tag">
                     {props.data.price} $
+                {authData.isAdmin === false && <button className="buy-book-btn">Buy</button>}
                 </div>
                 <div className="comment-divider"></div>
                 {authData.accessToken && 

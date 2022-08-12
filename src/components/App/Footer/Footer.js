@@ -1,8 +1,11 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 export const Footer = () => {
     const pathname = useLocation().pathname;
+    const { authData } = useContext(AuthContext);
 
     return (
         <footer id={pathname === '/home' ? "hidden-footer" : "footer"}>
@@ -20,9 +23,9 @@ export const Footer = () => {
                 <li className="nav-footer-element">
                     <Link to="/careers" className="nav-link">Careers</Link>
                 </li>
-                <li className="nav-footer-element">
+                {(authData.isAdmin === false || !authData.accessToken) ? <li className="nav-footer-element">
                     <Link to="/contact" className="nav-link">Contact us</Link>
-                </li>
+                </li> : null}
                 <li className="nav-footer-element">
                     <Link to="/faq" className="nav-link">FAQ</Link>
                 </li>
