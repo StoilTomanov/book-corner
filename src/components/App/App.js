@@ -10,7 +10,6 @@
 // [x] wrap comment text - currently overflowing  
 // [x] update details state when adding a comment
 // [x] show buy button in the details page for non-admin users
-// [ ] show quantity in the details view
 // [x] implement admin role
 // [x] implement edit button for book record
 // [x] implement delete button for book record
@@ -27,13 +26,13 @@
 // [x] complete the tabs in the profile view
 // [ ] upload avatar for the profile view
 // [x] finish messages in profile view once they are implemented
-// [ ] edit functionality on the profile data (addresses, personal info, etc.)
+// [x] edit functionality on the profile data (addresses, personal info, etc.)
 // [x] guest should see catalog and details without functional activities (edit, delete, rate, etc.)
 // [ ] create modal with the categories
 // [x] show/hide links based on role and authentication
 // [x] complete the contact form
-// [ ] user should be able to reply to admin's messages
-// [ ] admin should be able to reply to user's messages
+// [x] user should be able to reply to admin's messages
+// [x] admin should be able to reply to user's messages
 // [ ] get a confirmation when Buy is clicked
 // [x] add comment to the book model - e.g. {username: Josh123, comment: 'Really cool book'}
 // [ ] implement search functionality

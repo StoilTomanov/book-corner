@@ -79,10 +79,38 @@ function createSession(user) {
     };
 }
 
+async function updateUserData(userData, userId) {
+    const user = await User.findOne({ _id: userId });
+    console.log('user', user);
+    if (!user) {
+        throw new Error('User does not exists.')
+    }
+
+    if(userData.password === '') {
+        user.email = userData.email;
+        user.username = userData.username;
+        user.address = userData.address;
+        user.telephone = userData.telephone;
+        user.birthDate = userData.birthDate;
+        await user.save();
+        return user;
+    } else {
+        user.email = userData.email;
+        user.username = userData.username;
+        user.address = userData.address;
+        user.telephone = userData.telephone;
+        user.birthDate = userData.birthDate;
+        user.hashedPassword = await bcrypt.hash(userData.password, 10);
+        await user.save();
+        return user;
+    }
+}
+
 module.exports = {
     verifySession,
     login,
     register,
     logout,
     getUserData,
+    updateUserData,
 }
