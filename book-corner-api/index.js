@@ -2,6 +2,7 @@ const express = require('express');
 
 const apiController = require('./controllers/book-corner-api');
 const usersController = require('./controllers/book-corner-users');
+const messagesController = require('./controllers/book-corner-messages');
 
 const database = require('./models/index');
 
@@ -24,6 +25,7 @@ async function initRest() {
     app.use(auth());
     app.use('/api', apiController);
     app.use('/users', usersController);
+    app.use('/messages', messagesController);
 
     app.get('/', (req, res) => res.json(serverInfo));
     app.get('*', (req, res) => res.status(404).json({

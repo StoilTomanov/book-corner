@@ -1,10 +1,10 @@
 const { model, Schema, Types: { ObjectId } } = require('mongoose');
 
 const messageSchema = new Schema({
-    senderId: { type: ObjectId, required: false },
-    from: { type: String, required: [true, 'Email is required'] },
+    from: { type: String, required: [true, 'From email is required'] },
+    to: { type: String, required: [true, 'To email is required'] },
     topic: { type: String, required: [true, 'Topic is required'] },
-    message: { type: String, required: true },
+    message: { type: String, required: [true, 'Message is required'] },
     isAdmin: { type: Boolean, required: [true, 'Admin check required'] },
     date: {
         type: String,
@@ -14,7 +14,6 @@ const messageSchema = new Schema({
             return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
         }
     },
-    isReplied: { type: Boolean, default: false, },
 });
 
 const Message = model('Message', messageSchema);

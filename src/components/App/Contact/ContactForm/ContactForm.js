@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../contexts/AuthContext";
-import { updateMessages } from "../../../../services/user-service";
+import { sendMessage } from "../../../../services/message-service";
 
 import { ErrorMessage } from "../../ErrorMessage/ErrorMessage";
 
@@ -49,9 +49,11 @@ export const ContactForm = () => {
         if(!checkFormData(contactData)) {
             setError(error => error = true);
         } else {
-            updateMessages('update', authData.email || contactData.from, false, contactData)
-                .then();
-                console.log(contactData)
+            sendMessage(
+                contactData,
+                authData.email ? authData.email : contactData.from, 
+                'admin_email'
+                )
             navigate('/catalog');
         }
     }

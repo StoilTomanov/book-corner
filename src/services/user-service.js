@@ -95,36 +95,3 @@ export const getCurrentUser = async(accessToken, userId) => {
         throw new Error(error.message);
     }
 }
-
-export const updateMessages = async(action, email, isAdmin, message, receiver) => {
-    try {
-        let response;
-        if(isAdmin === true) {
-            response = await fetch(userURL + `admin/messages/${action}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({message, receiver}),
-            });
-        } else if (isAdmin === false) {
-            response = await fetch(userURL + `regular/messages/${action}/${email}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({message}), 
-            });
-        }
-
-        if(!response.ok){
-            const result = await response.json();
-            throw new Error(result.message);
-        } else {
-            return await response.json();
-        }
-    } catch (error) {
-        console.log(error);
-        throw new Error(error.message);
-    }
-}

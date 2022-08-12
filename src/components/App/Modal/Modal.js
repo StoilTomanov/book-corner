@@ -1,6 +1,6 @@
-import { updateMessages } from "../../../services/user-service";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { deleteMessage, sendMessage } from "../../../services/message-service";
 
 export const Modal = ({ hideModal, msgData }) => {
     const { authData } = useContext(AuthContext);
@@ -10,11 +10,19 @@ export const Modal = ({ hideModal, msgData }) => {
 
     const sendReplyHandler = (ev) => {
         ev.preventDefault();
-        if(authData.isAdmin === true) {
-            updateMessages('reply', authData.email, true, {from: msgData.email, topic: msgData.topic, message: ev.target.children[1].children[0].value}, msgData.email);
-        } else {
-            updateMessages('reply', authData.email, false, {from: msgData.email, topic: msgData.topic, message: ev.target.children[1].children[0].value}, 'admin_email');
+        // { from: "jack@abv.bg", topic: "Our books", message: "Do you have Green Mile?", isAdmin: "false" }
+        const replyMsg = {
+            from: authData.email,
+            topic: msgData.topic,
+            message: ev.target.children[1].children[0].value,
+            isAdmin: authData.isAdmin
         }
+        sendMessage(
+            replyMsg, 
+            authData.email,
+            msgData.email
+        );
+        deleteMessage(authData.email, ev.target.dataset.id, authData.accessToken);
         hideModal(false);
     }
 
@@ -22,7 +30,7 @@ export const Modal = ({ hideModal, msgData }) => {
         <>
             <div className="modal-overlay" id="modal-overlay"></div>
             <div className="modal-wrapper">
-                <form onSubmit={sendReplyHandler}>
+                <form data-id={msgData.msgId} onSubmit={sendReplyHandler}>
                     <div className="modal-header">
                         <p>Reply to {msgData.email}</p>
                         <p>Topic: {msgData.topic}</p>
