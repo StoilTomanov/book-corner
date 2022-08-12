@@ -1,6 +1,6 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
-import { deleteMessage, getUserMessages, sendMessage } from "../../../services/message-service";
+import { deleteMessage, sendMessage } from "../../../services/message-service";
 
 export const Modal = ({ hideModal, msgData, updateMessages }) => {
     const { authData } = useContext(AuthContext);

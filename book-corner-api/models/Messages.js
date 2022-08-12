@@ -1,4 +1,4 @@
-const { model, Schema, Types: { ObjectId } } = require('mongoose');
+const { model, Schema } = require('mongoose');
 
 const messageSchema = new Schema({
     from: { type: String, required: [true, 'From email is required'] },
