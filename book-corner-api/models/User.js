@@ -24,6 +24,9 @@ const userSchema = new Schema({
     messages: { type: [Object], default: [] },
     books: { type: [''], default: [], ref: 'Book' },
     isAdmin: { type: Boolean, required: true },
+    address: { type: String, required: false },
+    telephone: { type: String, required: false },
+    birthDate: { type: String, required: false },
     hashedPassword: { type: String, required: true },
 });
 

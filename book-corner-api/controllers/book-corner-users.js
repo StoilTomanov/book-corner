@@ -68,4 +68,20 @@ async function userRequestHandler(req, res, path, userData, statusCode) {
     }
 }
 
+router.put('/updateuser/:id', async(req, res) => {
+    const userData = req.body.userData;
+    const userId = req.params.id;
+    try {
+        if(req.user) {
+            const result = await userService.updateUserData(userData, userId);
+            res.status(200).json(result);
+        }
+    } catch (error) {
+        console.error(error.message);
+        const mappedError = errorMapper(error);
+        res.status(400).json({ message: mappedError });
+    }
+    res.end();
+});
+
 module.exports = router;
