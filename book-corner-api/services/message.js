@@ -26,20 +26,19 @@ async function createMessage(from, to, message) {
 
 async function deleteMessage(holder, msgId) {
     const fromResult = await User.findOne({email: holder});
-
     if(!fromResult) { return null }
-    let indexToRemove = 0;
-
-    fromResult.messages.map((msg, index) => {
-        if(msg._id === msgId) {
-            indexToRemove = index;
+    let indexToDelete;
+    fromResult.messages = fromResult.messages.map((msg, index) => {
+        if(String(msg._id) === msgId) {
+            indexToDelete = index;
         }
         return msg;
     });
 
-    fromResult.messages.splice(indexToRemove, 1);
+    fromResult.messages.splice(indexToDelete, 1);
     await fromResult.save();
-    return fromResult;
+    const messages = await getUserMessages(fromResult._id);
+    return messages;
 }
 
 module.exports = {

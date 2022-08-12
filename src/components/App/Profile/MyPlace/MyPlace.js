@@ -17,9 +17,9 @@ export const MyPlace = () => {
 
     useEffect(()=>{
         getUserMessages(authData._id, authData.accessToken)
-        .then(data => {
-            setMessages(messages => messages = data);
-        });
+            .then(data => {
+                setMessages(messages => messages = data);
+            });
     }, [authData._id, authData.accessToken]);
     
     const toggleContentHandler = (ev) => {
@@ -33,6 +33,9 @@ export const MyPlace = () => {
 
     const deleteMessageHandler = (ev) => {
         deleteMessage(authData.email, ev.target.dataset.id, authData.accessToken)
+            .then(data => {
+                setMessages(messages => messages = data);
+            })
     };
     
     const replyMessageHandler = (ev) => {
@@ -75,7 +78,7 @@ export const MyPlace = () => {
                     </ol>
                 </div>
             </div>
-            {showModal && <Modal msgData={reply} hideModal={setShowModal} />}
+            {showModal && <Modal msgData={reply} hideModal={setShowModal} updateMessages={setMessages} />}
         </div>
     );
 }

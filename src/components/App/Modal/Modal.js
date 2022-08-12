@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
-import { deleteMessage, sendMessage } from "../../../services/message-service";
+import { deleteMessage, getUserMessages, sendMessage } from "../../../services/message-service";
 
-export const Modal = ({ hideModal, msgData }) => {
+export const Modal = ({ hideModal, msgData, updateMessages }) => {
     const { authData } = useContext(AuthContext);
     const closeModalHandler = () => {
         hideModal(false);
@@ -10,7 +10,6 @@ export const Modal = ({ hideModal, msgData }) => {
 
     const sendReplyHandler = (ev) => {
         ev.preventDefault();
-        // { from: "jack@abv.bg", topic: "Our books", message: "Do you have Green Mile?", isAdmin: "false" }
         const replyMsg = {
             from: authData.email,
             topic: msgData.topic,
@@ -22,8 +21,11 @@ export const Modal = ({ hideModal, msgData }) => {
             authData.email,
             msgData.email
         );
-        deleteMessage(authData.email, ev.target.dataset.id, authData.accessToken);
-        hideModal(false);
+        deleteMessage(authData.email, ev.target.dataset.id, authData.accessToken)
+            .then(data => {
+                updateMessages(data);
+                hideModal(false);
+            });
     }
 
     return (

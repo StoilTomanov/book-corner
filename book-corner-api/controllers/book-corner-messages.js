@@ -23,9 +23,9 @@ router.patch('/:from/:to', async(req, res) => {
     const msgTo = req.params.to;
     const messageBody = req.body.message;
     messageBody.to = msgTo;
-    console.log(messageBody);
+
     try {
-    await messageService.createMessage(msgFrom, msgTo, messageBody);
+        await messageService.createMessage(msgFrom, msgTo, messageBody);
     } catch (error) {
         console.error(error.message);
         const mappedError = errorMapper(error);
@@ -40,7 +40,8 @@ router.delete('/:holder/:msgid', async(req, res) => {
     const msgId = req.params.msgid;
     try {
         if (req.user) {
-            await messageService.deleteMessage(holder, msgId);
+            const result = await messageService.deleteMessage(holder, msgId);
+            res.status(200).json(result);
         }
     } catch (error) {
         console.error(error.message);
