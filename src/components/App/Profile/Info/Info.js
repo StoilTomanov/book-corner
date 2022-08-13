@@ -28,7 +28,7 @@ export const Info = () => {
                 birthDate: data.birthDate || '',
             }));
         })
-    }, []);
+    }, [authData.accessToken, authData._id]);
 
     const changeHandler = (ev) => {
         setValue(value => ({

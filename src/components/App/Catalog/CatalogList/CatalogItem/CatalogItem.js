@@ -22,7 +22,7 @@ export const CatalogItem = (props) => {
                     <span>{props.data.author}</span>
                 </div>
                 <div className="book-rating">
-                    <span>Rating: {props.data.ratingScore}</span>
+                    <span>Rating: {props.data.ratingScore === 0 ? 1 : Number(props.data.ratingScore) / Number(props.data.rating.length)}</span>
                 </div>
                 <div className="price">
                     <span>{props.data.price} $</span>
