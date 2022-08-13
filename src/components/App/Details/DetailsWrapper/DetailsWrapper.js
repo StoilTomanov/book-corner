@@ -113,7 +113,7 @@ export const DetailsWrapper = (props) => {
                 </div>
                 <div className="price-tag">
                     {props.data.price} $
-                {authData.isAdmin === false && <button data-id={props.data._id} onClick={buyHandler} className="buy-book-btn">Buy</button>}
+                {authData.isAdmin === false && props.data.upcoming === false && <button data-id={props.data._id} onClick={buyHandler} className="buy-book-btn">Buy</button>}
                 </div>
                 <div className="comment-divider"></div>
                 {authData.accessToken && 

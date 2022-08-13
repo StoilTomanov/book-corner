@@ -1,13 +1,21 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../../contexts/AuthContext";
+import { buyBook } from "../../../../../utils/buyBook";
 
 export const CatalogItem = (props) => {
     const navigate = useNavigate();
     const { authData } = useContext(AuthContext);
     const onDetailsNavigateHandler = (ev) => {
         navigate(`/details/${ev.target.dataset.id}`);
-    }
+    };
+
+    const buyHandler = (ev) => {
+        buyBook({
+            bookId: ev.target.dataset.id,
+            bookName: props.data.title,
+        }, authData._id, authData.accessToken)
+    };
 
     return (
         <li className="book-item">
@@ -29,7 +37,7 @@ export const CatalogItem = (props) => {
                 </div>
                 <div className="book-card-btns">
                     <button data-id={props.data._id} onClick={onDetailsNavigateHandler}>Details</button>
-                    {authData.isAdmin === false ? <button>Buy</button> : null}
+                    {authData.isAdmin === false ? <button data-id={props.data._id} onClick={buyHandler} >Buy</button> : null}
                 </div>
             </div>
         </li>

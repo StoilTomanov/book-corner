@@ -10,7 +10,7 @@ export const BookItem = (props) => {
     }
     return (
         <li className="book-item">
-            <div className="discount">{props.data.discount}%</div>
+            <div className="discount">{props.data.discount !== null ? props.data.discount : 15}%</div>
             <div className="book-card">
                 <div className="book-img">
                     <img src={props.data.imageUrl} alt="book" />
@@ -22,7 +22,7 @@ export const BookItem = (props) => {
                     <span>{props.data.author}</span>
                 </div>
                 <div className="book-rating">
-                    <span>Rating: {props.data.ratingScore}</span>
+                    <span>Rating: {props.data.ratingScore === 0 ? 1 : Number(props.data.ratingScore) / Number(props.data.rating.length)}</span>
                 </div>
                 <div className="price">
                     <span>{props.data.price} lv</span>

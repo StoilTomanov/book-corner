@@ -22,7 +22,7 @@ export const MyPlace = () => {
             .then(data => {
                 setMessages(messages => messages = data);
             });
-            getCurrentUser(authData.accessToken, authData._id)
+        getCurrentUser(authData.accessToken, authData._id)
             .then(data => {
                 setBooks(data);
             });

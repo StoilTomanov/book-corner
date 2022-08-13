@@ -53,10 +53,6 @@ export const Header = () => {
                 <li className="nav-header-element">
                     <Link to="/profile" className="nav-link">Profile</Link>
                 </li>
-                {authData.isAdmin === false &&
-                <li className="nav-header-element">
-                    <Link to="/bin" className="nav-link">Bin</Link>
-                </li>}
                 <li className="nav-header-element">
                     <Link to="/logout" replace onClick={logoutHandler} className="nav-link">Logout</Link>
                 </li>
