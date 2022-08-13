@@ -4,10 +4,12 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../contexts/AuthContext";
 import { deleteMessage, getUserMessages } from "../../../../services/message-service";
 import { Modal } from "../../Modal/Modal";
+import { getCurrentUser } from "../../../../services/user-service";
 
 export const MyPlace = () => {
     const {authData} = useContext(AuthContext);
     const [messages, setMessages] = useState([]);
+    const [books, setBooks] = useState([]);
     const [reply, setReply] = useState({
         email: '',
         topic: '',
@@ -19,6 +21,10 @@ export const MyPlace = () => {
         getUserMessages(authData._id, authData.accessToken)
             .then(data => {
                 setMessages(messages => messages = data);
+            });
+            getCurrentUser(authData.accessToken, authData._id)
+            .then(data => {
+                setBooks(data);
             });
     }, [authData._id, authData.accessToken]);
     
@@ -71,10 +77,9 @@ export const MyPlace = () => {
             <div id="book-list-toggle" className="toggle">
                 <div>
                     <ol>
-                        <li>asdsd</li>
-                        <li>asdsd</li>
-                        <li>asdsd</li>
-                        <li>asdsd</li>
+                        {books.books !== undefined ? books.books.map((book, index) => {
+                            return <li key={index}>{book}</li>
+                        }) : <h4>There are no bought books</h4>}
                     </ol>
                 </div>
             </div>

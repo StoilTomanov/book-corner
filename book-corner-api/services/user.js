@@ -85,21 +85,27 @@ async function updateUserData(userData, userId) {
         throw new Error('User does not exists.')
     }
 
-    if(userData.password === '') {
-        user.email = userData.email;
-        user.username = userData.username;
-        user.address = userData.address;
-        user.telephone = userData.telephone;
-        user.birthDate = userData.birthDate;
-        await user.save();
-        return user;
+    if(!userData.bookName) {
+        if(userData.password.trim() === '') {
+            user.email = userData.email;
+            user.username = userData.username;
+            user.address = userData.address;
+            user.telephone = userData.telephone;
+            user.birthDate = userData.birthDate;
+            await user.save();
+            return user;
+        } else {
+            user.email = userData.email;
+            user.username = userData.username;
+            user.address = userData.address;
+            user.telephone = userData.telephone;
+            user.birthDate = userData.birthDate;
+            user.hashedPassword = await bcrypt.hash(userData.password, 10);
+            await user.save();
+            return user;
+        } 
     } else {
-        user.email = userData.email;
-        user.username = userData.username;
-        user.address = userData.address;
-        user.telephone = userData.telephone;
-        user.birthDate = userData.birthDate;
-        user.hashedPassword = await bcrypt.hash(userData.password, 10);
+        user.books.push(userData.bookName);
         await user.save();
         return user;
     }

@@ -3,6 +3,7 @@ import { AuthContext } from "../../../../contexts/AuthContext";
 import { deleteBookRecord, updateBookComments } from "../../../../services/api-service";
 import { useNavigate } from "react-router-dom";
 import { RatingSetter } from "../../RatingSetter/RatingSetter";
+import { buyBook } from "../../../../utils/buyBook";
 
 export const DetailsWrapper = (props) => {
     const { authData } = useContext(AuthContext);
@@ -57,6 +58,13 @@ export const DetailsWrapper = (props) => {
         }
     }
 
+    const buyHandler = (ev) => {
+        buyBook({
+            bookId: ev.target.dataset.id,
+            bookName: props.data.title,
+        }, authData._id, authData.accessToken)
+    }
+
     const commentChangeHandler = (ev) => {
         setComment((commentData) => ({
             ...commentData,
@@ -105,7 +113,7 @@ export const DetailsWrapper = (props) => {
                 </div>
                 <div className="price-tag">
                     {props.data.price} $
-                {authData.isAdmin === false && <button className="buy-book-btn">Buy</button>}
+                {authData.isAdmin === false && <button data-id={props.data._id} onClick={buyHandler} className="buy-book-btn">Buy</button>}
                 </div>
                 <div className="comment-divider"></div>
                 {authData.accessToken && 
