@@ -97,7 +97,6 @@ export const getCurrentUser = async(accessToken, userId) => {
 }
 
 export const updateUser = async(userData, userId, accessToken) => {
-    console.log(userData, userId, accessToken);
     try {
         const response = await fetch(userURL + 'updateuser/' + userId, {
             method: 'PUT',

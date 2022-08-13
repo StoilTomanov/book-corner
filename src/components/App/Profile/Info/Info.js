@@ -52,8 +52,11 @@ export const Info = () => {
             ...value,
             [ev.target.children[0].name]: ev.target.children[0].value,
         }));
-
+        ev.target.children[1].textContent = 'Success';
         updateUser(value, authData._id, authData.accessToken);
+        setTimeout(() => {
+            ev.target.children[1].textContent = 'Update';
+        }, 2000);
     }
 
     return (

@@ -81,7 +81,6 @@ function createSession(user) {
 
 async function updateUserData(userData, userId) {
     const user = await User.findOne({ _id: userId });
-    console.log('user', user);
     if (!user) {
         throw new Error('User does not exists.')
     }

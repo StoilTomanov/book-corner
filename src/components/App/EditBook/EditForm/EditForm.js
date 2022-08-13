@@ -86,7 +86,6 @@ export const EditForm = () => {
         const formCheckResult = formChecker(data);
 
         if(formCheckResult === null) {
-            console.log(data);
             updateBookRecord(data, bookId, authData.accessToken);
             setTimeout(() => {
                 navigate('/catalog');

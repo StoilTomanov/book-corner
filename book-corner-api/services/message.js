@@ -3,7 +3,6 @@ const User = require( '../models/User' );
 
 async function getUserMessages(userId) {
     const user = await User.findById({_id: userId});
-    console.log(user)
     return user.messages;
 }
 

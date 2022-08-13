@@ -3,7 +3,6 @@
 // [ ] complete the filtering in the on-sale page
 // [ ] add email validation
 // [ ] implement the bin view - modal
-// [ ] checkout in bin view
 // [ ] create modal with the categories
 // [ ] get a confirmation when Buy is clicked
 // [ ] implement search functionality
